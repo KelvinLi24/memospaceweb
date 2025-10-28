@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MemoSpace — Demos & Workflow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="See MemoSpace in action: workflow overview and demo videos." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="MemoSpace — Demos & Workflow" />
+  <meta property="og:description" content="See MemoSpace in action: workflow overview and demo videos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/demo-cover.svg" />
+  <meta property="og:url" content="./demo.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a class="brand" href="./index.html#hero" aria-label="MemoSpace Home">
+        <img class="brand-mark" src="./assets/logo-mark.svg" alt="" />
+        <span class="brand-name">MemoSpace</span>
+        <span class="badge">by Memory Ferrymen</span>
+      </a>
+
+      <div class="nav-links" data-desktop>
+        <a href="./index.html#features" class="nav-link">Features</a>
+        <a href="./index.html#how" class="nav-link">How it works</a>
+        <a href="./index.html#story" class="nav-link">Story</a>
+        <a href="./index.html#about" class="nav-link">About Us</a>
+        <a href="./index.html#contact" class="nav-link">Contact</a>
+        <a href="./index.html#faq" class="nav-link">FAQ</a>
+        <a href="./index.html" class="btn btn--primary nav-cta">Back Home</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="./index.html#features" class="mobile-link">Features</a>
+      <a href="./index.html#how" class="mobile-link">How it works</a>
+      <a href="./index.html#story" class="mobile-link">Story</a>
+      <a href="./index.html#about" class="mobile-link">About Us</a>
+      <a href="./index.html#contact" class="mobile-link">Contact</a>
+      <a href="./index.html#faq" class="mobile-link">FAQ</a>
+      <a href="./index.html" class="btn btn--primary mobile-cta">Back Home</a>
+    </div>
+  </header>
+
+  <!-- Workflow / Architecture -->
+  <section class="section">
+    <div class="container fade-up">
+      <h1 class="title-lg">Workflow & Architecture</h1>
+      <p class="muted max-600">
+        This diagram summarizes our capture → reconstruct → relive pipeline. Replace the image with your latest architecture if needed.
+      </p>
+
+      <figure class="figure">
+        <img src="./assets/flow-architecture.svg" alt="MemoSpace workflow architecture diagram" class="figure-img" />
+        <figcaption class="figure-cap muted small">MemoLens capture → 3DGS reconstruction → MemoSpace XR → MemoPortal sharing</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Demo Videos -->
+  <section class="section">
+    <div class="container fade-up">
+      <h2 class="title-lg">Watch the Demos</h2>
+      <p class="muted max-600">Short clips showcasing capture guidance, reconstruction quality, and XR navigation.</p>
+    </div>
+
+    <div class="container video-grid fade-up">
+      <!-- Replace VIDEO_ID_X with your YouTube IDs -->
+      <div class="video-card card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_1"
+            title="Demo 1 — Capture with MemoLens"
+            loading="lazy" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        <h3 class="card-title">Capture with MemoLens</h3>
+        <p class="muted small">AR ring guidance and multi-height loop capture.</p>
+      </div>
+
+      <div class="video-card card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_2"
+            title="Demo 2 — 3DGS Reconstruction"
+            loading="lazy" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        <h3 class="card-title">3DGS Reconstruction</h3>
+        <p class="muted small">From handheld video to photorealistic 3D scene.</p>
+      </div>
+
+      <div class="video-card card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_3"
+            title="Demo 3 — XR Walkthrough"
+            loading="lazy" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        <h3 class="card-title">XR Walkthrough</h3>
+        <p class="muted small">Navigate, pause, and relive moments on Vision Pro / Quest.</p>
+      </div>
+
+      <div class="video-card card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_4"
+            title="Demo 4 — MemoPortal Sharing"
+            loading="lazy" allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        <h3 class="card-title">MemoPortal Sharing</h3>
+        <p class="muted small">Web playback, embedding, and collaborative curation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes -->
+  <section class="section">
+    <div class="container fade-up">
+      <div class="panel">
+        <h3 class="panel-title">Notes</h3>
+        <ul class="muted small" style="margin:8px 0 0 18px;">
+          <li>Replace <code>VIDEO_ID_X</code> with your actual YouTube IDs.</li>
+          <li>Replace <code>./assets/flow-architecture.svg</code> with your latest diagram (PNG/SVG).</li>
+          <li>All sections inherit RWD styles; video iframes are responsive with 16:9 aspect ratio.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
+      <path fill="currentColor" d="M12 5l7 7-1.41 1.41L13 9.83V20h-2V9.83l-4.59 4.58L5 12z"/>
+    </svg>
+  </button>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

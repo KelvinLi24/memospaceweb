@@ -11,6 +11,7 @@
   --card-2: #0f0f12;
   --radius: 20px;
   --shadow: 0 10px 30px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  --nav-h: 64px; /* JS 會覆寫為實際高度 */
 }
 
 *{ box-sizing: border-box; }
@@ -21,6 +22,7 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--text);
   background: linear-gradient(180deg, var(--bg), var(--bg-2));
+  padding-top: var(--nav-h); /* 讓內容不被 fixed 導覽列遮住 */
 }
 
 /* Layout helpers */
@@ -38,9 +40,11 @@ body{
 .small{ font-size: 14px; }
 .xsmall{ font-size: 12px; }
 
-/* Navbar */
+/* Navbar (fixed) */
 .navbar{
-  position: sticky; top:0; z-index: 20;
+  position: fixed;
+  top:0; left:0; right:0; width:100%;
+  z-index: 50;
   backdrop-filter: blur(8px);
   background: rgba(0,0,0,.35);
   border-bottom: 1px solid rgba(255,255,255,.06);
@@ -150,6 +154,9 @@ body{
   box-shadow: var(--shadow);
 }
 
+.panel-row{ display:flex; align-items:flex-start; gap:12px; }
+.panel-title{ font-weight: 700; }
+
 /* Steps list */
 .steps{ list-style: none; padding:0; margin:0; display:grid; gap:12px; }
 .steps .num{
@@ -163,9 +170,56 @@ body{
 .chip{
   border-radius: 999px; padding: 6px 10px; border:1px solid transparent; display:inline-flex; gap:6px; align-items:center;
 }
-.chip--green{ background: rgba(52,211,153,.18); color: #a7f3d0; }
-.chip--sky{ background: rgba(56,189,248,.18); color: #bae6fd; }
-.chip--outline{ border-color: var(--border); color: var(--muted); }
+.chip--green {
+  background: rgba(77, 255, 166, 0.08);
+  border: 1px solid rgba(77, 255, 166, 0.35);
+  color: #4dffa6;
+  backdrop-filter: blur(6px);
+}
+
+.chip--orange {
+  background: rgba(255, 180, 70, 0.08);
+  border: 1px solid rgba(255, 180, 70, 0.35);
+  color: #ffb546;
+  backdrop-filter: blur(6px);
+}
+
+.chip--sky {
+  background: rgba(115, 190, 255, 0.08);
+  border: 1px solid rgba(115, 190, 255, 0.35);
+  color: #73beff;
+  backdrop-filter: blur(6px);
+}
+
+/* Keep outline neutral gray for balance */
+.chip--outline {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* === Divider & Footnote === */
+.divider-glass {
+  width: 60%;
+  margin: 0 auto;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(4px);
+}
+
+.muted.xsmall {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
 
 /* Team */
 .team{ text-align:center; }
@@ -209,13 +263,340 @@ body{
 .magnet-wrap{ position: relative; }
 .magnet{ display:inline-flex; will-change: transform; }
 
+/* --- Mobile Navigation --- */
+.hamburger{
+  display:none; position:relative; width:44px; height:36px; border:0; background:transparent; cursor:pointer;
+  border-radius:10px;
+}
+.hamburger:focus-visible{ outline: 2px solid var(--orange); outline-offset: 2px; }
+.hamburger-bar{
+  display:block; width:22px; height:2px; background:#e5e7eb; margin:5px auto; transition:transform .25s ease, opacity .2s;
+}
+.hamburger.is-open .hamburger-bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.hamburger.is-open .hamburger-bar:nth-child(2){ opacity:0; }
+.hamburger.is-open .hamburger-bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu{
+  display:none;
+  position: absolute; top: var(--nav-h); left:0; right:0;
+  background: rgba(0,0,0,.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 12px 20px 18px;
+}
+.mobile-menu.is-open{ display:block; animation: menuFade .18s ease; }
+@keyframes menuFade{ from{opacity:0; transform: translateY(-6px);} to{opacity:1; transform:none;} }
+
+.mobile-link{
+  display:block; padding: 12px 6px; color: var(--text); text-decoration:none; border-radius: 10px;
+}
+.mobile-link:hover{ background: rgba(255,255,255,.06); }
+.mobile-cta{ display:block; text-align:center; margin-top: 6px; }
+
+/* RWD: 折疊成漢堡選單 */
+@media (max-width: 920px){
+  .nav-links[data-desktop]{ display:none; }
+  .hamburger{ display:inline-flex; align-items:center; justify-content:center; }
+}
+
+/* 小螢幕排版增強 */
+@media (max-width: 420px){
+  .title-xl{ font-size: clamp(28px, 9vw, 40px); }
+  .subtitle{ font-size: 15px; }
+  .btn{ --padx: 14px; --pady: 10px; font-size: 13px; }
+  .badge{ font-size: 11px; }
+}
+
+/* 大桌面寬度優化 */
+@media (min-width: 1280px){
+  .container{ max-width: 1200px; }
+}
+
+/* Back to Top Button */
+.backtotop{
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 60;
+  width: 48px; height: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  color: #111; background: var(--orange);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 24px rgba(251,146,60,.35), 0 2px 0 rgba(255,255,255,.06) inset;
+  opacity: 0; transform: translateY(10px) scale(.9);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, box-shadow .2s ease;
+}
+.backtotop:hover{ box-shadow: 0 14px 30px rgba(251,146,60,.45), 0 2px 0 rgba(255,255,255,.06) inset; }
+.backtotop:focus-visible{ outline: 2px solid #fff; outline-offset: 3px; }
+.backtotop.show{ opacity: 1; transform: none; pointer-events: auto; }
+
+@media (max-width: 420px){
+  .backtotop{ width: 44px; height: 44px; bottom: calc(12px + env(safe-area-inset-bottom)); right: max(12px, env(safe-area-inset-right)); }
+}
+
+/* Figure (for architecture diagram) */
+.figure{ margin: 20px 0 0; }
+.figure-img{
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: #0e0e12;
+}
+.figure-cap{ margin-top: 8px; text-align: center; }
+
+/* Video grid */
+.video-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.video-card .card-title{ margin-top: 10px; }
+.video-embed{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;            /* responsive iframe */
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+}
+.video-embed iframe{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+  background: #000;
+}
+
+/* Wider grids on larger screens */
+@media (min-width: 700px){
+  .video-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1120px){
+  .video-grid{ grid-template-columns: 1fr 1fr; }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .fade-up{ transition:none; opacity:1; transform:none; }
   .teaser-card{ transition:none; }
   .navbar, .btn{ transition:none; }
+  .backtotop{ transition: opacity .1s linear; transform: none; }
 }
 
-/* Utilities */
-.icon{ display:block; }
-.muted .link{ color: #e5e5e5; text-decoration: underline; }
+/* --- Modal (beta) --- */
+.modal{ position: fixed; inset: 0; display: none; z-index: 80; }
+.modal.is-open{ display: block; }
+.modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+.modal__dialog{
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(560px, calc(100% - 32px));
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 20px 16px;
+}
+.modal__body{ margin-bottom: 14px; }
+.modal__actions{ display:flex; justify-content:flex-end; gap:10px; }
+.modal__close{
+  position:absolute; right: 10px; top: 8px; width: 36px; height: 36px;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: rgba(255,255,255,.04); color: var(--text); font-size: 20px; line-height: 1;
+  cursor: pointer;
+}
+.modal__close:hover{ background: rgba(255,255,255,.08); }
+
+/* =========================================================
+   MemoSpace — Styles Add-on (non-destructive)
+   ========================================================= */
+
+/* ---------------- Modal (Public Beta) ------------------- */
+.modal{ position: fixed; inset: 0; display: none; z-index: 80; }
+.modal.is-open{ display: block; }
+.modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+.modal__dialog{
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(560px, calc(100% - 32px));
+  background: var(--card, rgba(20,20,20,.9));
+  border: 1px solid var(--border, rgba(255,255,255,.12));
+  border-radius: var(--radius, 16px);
+  box-shadow: var(--shadow, 0 10px 40px rgba(0,0,0,.35));
+  padding: 20px 20px 16px;
+}
+.modal__body{ margin-bottom: 14px; }
+.modal__actions{ display:flex; justify-content:flex-end; gap:10px; }
+.modal__close{
+  position:absolute; right: 10px; top: 8px; width: 36px; height: 36px;
+  border-radius: 10px; border: 1px solid var(--border, rgba(255,255,255,.12));
+  background: rgba(255,255,255,.04); color: var(--text, #fff); font-size: 20px; line-height: 1;
+  cursor: pointer;
+}
+.modal__close:hover{ background: rgba(255,255,255,.08); }
+
+/* --------------- Fade-up & Stagger (safe) --------------- */
+/* 使用 :where 降低優先度，避免覆寫你既有規則 */
+:where(.fade-up){
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .8s ease, transform .8s ease;
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+:where(.fade-up).is-inview,
+:where(.fade-up).inview-on-load{
+  opacity: 1; transform: translateY(0);
+}
+
+/* 降低動畫在減少動效偏好下的負擔 */
+@media (prefers-reduced-motion: reduce){
+  :where(.fade-up){ transition: none !important; transform: none !important; opacity: 1 !important; }
+}
+
+/* ----------------- Chips (refined colors) --------------- */
+/* 深色玻璃風，與現有 chip 系列相容 */
+.chip--green{
+  background: rgba(77, 255, 166, 0.08);
+  border: 1px solid rgba(77, 255, 166, 0.35);
+  color: #4dffa6;
+  backdrop-filter: blur(6px);
+}
+.chip--orange{ /* SDG 11 */
+  background: rgba(255, 180, 70, 0.08);
+  border: 1px solid rgba(255, 180, 70, 0.35);
+  color: #ffb546;
+  backdrop-filter: blur(6px);
+}
+.chip--sky{
+  background: rgba(115, 190, 255, 0.08);
+  border: 1px solid rgba(115, 190, 255, 0.35);
+  color: #73beff;
+  backdrop-filter: blur(6px);
+}
+.chip--outline{
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* -------------- Footnote & Divider (glass) -------------- */
+.divider-glass{
+  width: 60%; margin: 0 auto; border: none; height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(4px);
+}
+.muted.xsmall{
+  color: rgba(255,255,255,.45);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  letter-spacing: .2px;
+}
+
+/* -------- Back-to-top (only show when .show) ------------ */
+/* 若你已有此類別，以下為兼容強化 */
+.backtotop{ opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; }
+.backtotop.show{ opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* -------- Panel title subtle weight consistency ---------- */
+.panel-title{ font-weight: 600; }
+
+/* -------------- Small accessibility niceties ------------- */
+.badge--link{ text-decoration: none; }
+.badge--link:focus-visible,
+.btn:focus-visible,
+.modal__close:focus-visible{ outline: 2px solid rgba(255,255,255,.5); outline-offset: 2px; border-radius: 12px; }
+
+/* =========================================================
+   MemoSpace — Interactive Hover Enhancements (non-destructive)
+   ========================================================= */
+
+/* ----- Chips hover: 微亮＋輕微放大 ----- */
+.chip:hover,
+.chip:focus-visible {
+  transform: scale(1.05);
+  filter: brightness(1.25);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* SDG glass chips在hover時邊框加亮一點 */
+.chip--green:hover { border-color: rgba(77, 255, 166, 0.55); }
+.chip--orange:hover { border-color: rgba(255, 180, 70, 0.55); }
+.chip--sky:hover { border-color: rgba(115, 190, 255, 0.55); }
+
+/* ----- Buttons hover: 亮度＋輕浮效果 ----- */
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* ----- Cards hoverrise (already present, but enhance subtly) ----- */
+.card--hoverrise:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* ----- Hero CTA magnet subtle glow when hover ----- */
+.magnet:hover {
+  box-shadow: 0 0 20px rgba(255, 170, 80, 0.3);
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
+}
+
+/* ----- Modal OK button hover ----- */
+.modal__actions .btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+/* ----- Focus-visible consistency ----- */
+:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.5);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   Chips scroll-in animation (non-destructive)
+   ========================================================= */
+.chip {
+  will-change: transform, opacity, box-shadow, filter;
+}
+
+/* 進場：逐一淡入＋微位移，延遲用 CSS 變數 --i 控制 */
+.chip.chip-reveal {
+  animation: chipFadeIn 600ms ease both, chipGlow 1500ms ease-out both;
+  animation-delay: calc(var(--i, 0) * 90ms), calc(var(--i, 0) * 90ms);
+}
+
+@keyframes chipFadeIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* 微光暈一閃而過（非常輕微，保持高級感） */
+@keyframes chipGlow {
+  0%   { box-shadow: 0 0 0 rgba(255,255,255,0); filter: brightness(1.0); }
+  30%  { box-shadow: 0 6px 20px rgba(255,255,255,0.06); filter: brightness(1.06); }
+  100% { box-shadow: 0 0 0 rgba(255,255,255,0); filter: brightness(1.0); }
+}
+
+/* 與既有 hover 效果相容：進場完成後 hover 才加強 */
+.chip.chip-reveal:hover {
+  transform: translateY(-1px) scale(1.05);
+  filter: brightness(1.22);
+  transition: transform .25s ease, filter .25s ease, box-shadow .25s ease;
+}
