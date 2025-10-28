@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MemoSpace — Live inside your memories.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MemoSpace turns everyday videos into immersive 3D spaces—captured with MemoLens, rebuilt with 3DGS, and relived in XR." />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="MemoSpace — Live inside your memories." />
+  <meta property="og:description" content="MemoSpace turns everyday videos into immersive 3D spaces—captured with MemoLens, rebuilt with 3DGS, and relived in XR." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/demo-cover.svg" />
+  <meta property="og:url" content="." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a class="brand" href="#hero" aria-label="MemoSpace Home">
+        <img class="brand-mark" src="./assets/logo-mark.svg" alt="" />
+        <span class="brand-name">MemoSpace</span>
+        <span class="badge">by Memory Ferrymen</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#story" class="nav-link">Story</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#" class="btn btn--primary nav-cta">Open MemoSpace</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="section hero" aria-label="Hero section">
+    <!-- Parallax Glows -->
+    <div class="hero-glows" aria-hidden="true">
+      <div id="glowA" class="glow glow--orange"></div>
+      <div id="glowB" class="glow glow--sky"></div>
+    </div>
+
+    <div class="container hero-body fade-up inview-on-load" id="heroBody">
+      <h1 class="title-xl">Live inside your memories.</h1>
+      <p class="subtitle">
+        MemoSpace turns everyday videos into immersive 3D spaces—captured with
+        <strong>MemoLens</strong>, rebuilt with 3DGS, and relived in XR.
+      </p>
+
+      <div class="hero-ctas">
+        <!-- Magnetic button wrapper -->
+        <div class="magnet-wrap">
+          <a href="#features" class="btn btn--primary magnet" id="magBtn" aria-label="Try a Demo Scene">
+            <!-- Play icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+            Try a Demo Scene
+          </a>
+        </div>
+        <a href="#" class="btn btn--secondary">
+          <!-- Phone icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M17 1H7a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm0 18H7V5h10Z"/></svg>
+          Get MemoLens (iOS)
+        </a>
+      </div>
+
+      <div class="hero-badges">
+        <span class="badge badge--outline">
+          <!-- Sparkles -->
+          <svg width="14" height="14" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5Z"/></svg>
+          3D Gaussian Splatting
+        </span>
+        <span class="badge badge--outline">Vision Pro • Meta Quest</span>
+        <a href="#" class="badge badge--link" aria-label="Follow on Instagram">
+          <!-- Instagram -->
+          <svg width="14" height="14" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm5 3a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 14.8 12A2.8 2.8 0 0 0 12 9.2Zm5.6-1.8a.9.9 0 1 1-.9.9a.9.9 0 0 1 .9-.9Z"/></svg>
+          Follow on Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- Visual Teaser -->
+    <div class="container teaser-wrap">
+      <div class="teaser-tilt" id="teaserTilt">
+        <div class="teaser-card">
+          <img src="./assets/demo-cover.svg" alt="3D scene preview" class="teaser-cover" />
+          <div class="teaser-center">
+            <!-- Cuboid icon -->
+            <svg width="48" height="48" viewBox="0 0 24 24" class="icon">
+              <path fill="currentColor" d="M12 2l9 5v10l-9 5l-9-5V7zM5 8.15v7.7L12 20l7-4.15v-7.7L12 4L5 8.15Z"/>
+            </svg>
+            <span class="teaser-text">3D scene preview placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container text-center fade-up">
+      <h2 class="title-lg">From phone video to living memory</h2>
+      <p class="muted">Four steps. Minutes to set up. Awe on repeat.</p>
+    </div>
+
+    <div class="container grid-4 gap-lg stagger" data-stagger>
+      <article class="card fade-up">
+        <h3 class="card-title">
+          <!-- Camera -->
+          <svg width="18" height="18" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M9.4 4l1.2-2h2.8l1.2 2H20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm2.6 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8Z"/></svg>
+          Capture with MemoLens
+        </h3>
+        <p class="muted">Follow AR guidance to film a smooth 360° loop. Your clip doubles as a social-ready short.</p>
+      </article>
+
+      <article class="card fade-up">
+        <h3 class="card-title">
+          <!-- Sparkles -->
+          <svg width="18" height="18" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5Z"/></svg>
+          Rebuild with 3DGS
+        </h3>
+        <p class="muted">Our pipeline turns video into a photoreal 3D scene with metadata preserved.</p>
+      </article>
+
+      <article class="card fade-up">
+        <h3 class="card-title">
+          <!-- Headphones -->
+          <svg width="18" height="18" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 3a9 9 0 0 1 9 9v6a3 3 0 0 1-3 3h-1v-8h2a7 7 0 0 0-14 0h2v8H6a3 3 0 0 1-3-3v-6a9 9 0 0 1 9-9Z"/></svg>
+          Relive in XR
+        </h3>
+        <p class="muted">Step back in with Apple Vision Pro or Meta Quest—walk, pause, listen, remember.</p>
+      </article>
+
+      <article class="card fade-up">
+        <h3 class="card-title">
+          <!-- Share -->
+          <svg width="18" height="18" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M18 16a3 3 0 0 0-2.24 1.03l-6.5-3.4a3 3 0 0 0 0-3.27l6.5-3.4A3 3 0 1 0 16 6a2.96 2.96 0 0 0 .06.6l-6.5 3.4a3 3 0 1 0 0 3.99l6.5 3.4A2.96 2.96 0 0 0 16 18a3 3 0 1 0 2-2Z"/></svg>
+          Share on MemoPortal
+        </h3>
+        <p class="muted">Invite family and friends on web. Embed scenes, post to Instagram, co-create.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section">
+    <div class="container grid-2 gap-xl">
+      <div class="fade-up">
+        <div class="panel">
+          <ol class="steps">
+            <li><span class="num">1</span> Open <strong>MemoLens</strong> and follow the ring guide.</li>
+            <li><span class="num">2</span> Record one 360° loop per height (x5) with countdown cues.</li>
+            <li><span class="num">3</span> Auto-upload for 3DGS reconstruction. Review the preview.</li>
+            <li><span class="num">4</span> Explore in MemoSpace XR or share via MemoPortal.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="fade-up">
+        <h3 class="title-lg">Capture once. Revisit forever.</h3>
+        <p class="muted">Designed for real life—trips, street moments, family gatherings, quiet walks. Film as usual; the tech handles the rest.</p>
+        <div class="btn-row">
+          <a href="#" class="btn btn--primary">
+            <!-- External -->
+            <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M14 3h7v7h-2V7.41l-9.29 9.3l-1.42-1.42l9.3-9.29H14zM5 5h6v2H7v10h10v-4h2v6H5z"/></svg>
+            View sample scene
+          </a>
+          <a href="#" class="btn btn--ghost">Docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="story" class="section">
+    <div class="container grid-story gap-xl stagger" data-stagger>
+      <div class="fade-up">
+        <h3 class="title-lg">Memories that carry people forward</h3>
+        <p class="muted">
+          Born from our Yunnan service-learning journey, MemoSpace preserves places and stories—so families and communities can revisit them, together.
+        </p>
+        <div class="chip-row">
+          <span class="chip chip--green">
+            <!-- Handshake -->
+            <svg width="14" height="14" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M8.1 13.34L12 9.44l3.9 3.9l-1.41 1.41L12 12.26l-2.49 2.49z"/></svg>
+            SDG 3 · Well-being
+          </span>
+          <span class="chip chip--sky">SDG 11 · Sustainable Cities</span>
+          <span class="chip chip--outline">Digital Heritage</span>
+        </div>
+      </div>
+      <aside class="fade-up">
+        <div class="panel">
+          <div class="panel-row">
+            <!-- Shield -->
+            <svg width="20" height="20" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 2l8 4v6c0 5-3.4 9.4-8 10c-4.6-.6-8-5-8-10V6l8-4Zm0 3.2L6.5 7.7V12c0 3.7 2.4 7 5.5 7.7c3.1-.7 5.5-4 5.5-7.7V7.7L12 5.2Z"/></svg>
+            <div>
+              <div class="panel-title">Privacy-first sharing</div>
+              <div class="muted small">Owner controls, session links, audit trail. Your memories, your rules.</div>
+            </div>
+          </div>
+          <div class="muted xsmall mt-8">* Demo content shown. Replace with your own copy and links.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="section">
+    <div class="container text-center fade-up">
+      <h3 class="title-lg">Meet the Memory Ferrymen</h3>
+      <p class="muted">We are a team of creators, engineers, and storytellers from <strong>The Hong Kong Polytechnic University</strong>, united by a mission to preserve human memories through immersive technology.</p>
+    </div>
+
+    <div class="container grid-3 gap-lg stagger" data-stagger>
+      <!-- Six team cards -->
+      <!-- Use SVG avatar placeholders -->
+      <article class="card fade-up team">
+        <img src="./assets/team-1.svg" alt="Team member 1" class="avatar" />
+        <div class="team-name">Member 1</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+
+      <article class="card fade-up team">
+        <img src="./assets/team-2.svg" alt="Team member 2" class="avatar" />
+        <div class="team-name">Member 2</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+
+      <article class="card fade-up team">
+        <img src="./assets/team-3.svg" alt="Team member 3" class="avatar" />
+        <div class="team-name">Member 3</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+
+      <article class="card fade-up team">
+        <img src="./assets/team-4.svg" alt="Team member 4" class="avatar" />
+        <div class="team-name">Member 4</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+
+      <article class="card fade-up team">
+        <img src="./assets/team-5.svg" alt="Team member 5" class="avatar" />
+        <div class="team-name">Member 5</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+
+      <article class="card fade-up team">
+        <img src="./assets/team-6.svg" alt="Team member 6" class="avatar" />
+        <div class="team-name">Member 6</div>
+        <div class="muted small">Role / Description</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container text-center fade-up">
+      <h3 class="title-lg">Contact Us</h3>
+      <p class="muted max-600">Have questions, media inquiries, or collaboration ideas? We’d love to hear from you.</p>
+      <div class="btn-row center">
+        <a class="btn btn--secondary" href="mailto:team@memoryferrymen.com" aria-label="Email Us">
+          <!-- Mail -->
+          <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v1l-10 6L2 7V6a2 2 0 0 1 2-2Zm18 5.2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.2l10 6Z"/></svg>
+          Email Us
+        </a>
+        <a class="btn btn--primary" href="#" aria-label="Join our Discord">
+          <!-- Message -->
+          <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg>
+          Join our Discord
+        </a>
+      </div>
+      <div class="muted small mt-16">Or reach us directly at <a href="mailto:team@memoryferrymen.com" class="link">team@memoryferrymen.com</a></div>
+
+      <!--
+      Optional Contact Form (commented)
+      <form action="https://formspree.io/f/your-id" method="POST" class="contact-form">
+        <label>
+          <span>Name</span>
+          <input name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit">Send</button>
+      </form>
+      -->
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container text-center fade-up">
+      <h3 class="title-lg">Quick FAQ</h3>
+    </div>
+
+    <div class="container grid-2 gap-lg stagger" data-stagger>
+      <article class="card card--hoverrise fade-up">
+        <h4 class="card-title">Do I need special gear?</h4>
+        <p class="muted">No. Just your iPhone with MemoLens. XR viewing is optional.</p>
+      </article>
+
+      <article class="card card--hoverrise fade-up">
+        <h4 class="card-title">Can I post to Instagram?</h4>
+        <p class="muted">Yes—export short reels or share web scenes via MemoPortal.</p>
+      </article>
+
+      <article class="card card--hoverrise fade-up">
+        <h4 class="card-title">Is my data safe?</h4>
+        <p class="muted">We use secure storage, access controls, and audit logs.</p>
+      </article>
+
+      <article class="card card--hoverrise fade-up">
+        <h4 class="card-title">When can I try it?</h4>
+        <p class="muted">Public beta is coming soon. Join our waitlist from the demo.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="muted small">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#" class="link">Privacy</a>
+        <a href="#" class="link">Terms</a>
+        <a href="#" class="link">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts.js"></script>
+</body>
+</html>

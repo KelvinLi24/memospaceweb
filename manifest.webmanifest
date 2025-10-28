@@ -1,0 +1,16 @@
+{
+  "name": "MemoSpace — Live inside your memories.",
+  "short_name": "MemoSpace",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
