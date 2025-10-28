@@ -7,9 +7,8 @@
   <meta name="description" content="Watch MemoSpace demos: capture with MemoLens, reconstruct via open-source 3DGS tools, and revisit in XR." />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="MemoSpace — Demo Library" />
-  <meta property="og:description" content="Watch MemoSpace demos: capture with MemoLens, reconstruct via open-source 3DGS tools, and revisit in XR." />
+  <meta property="og:title" content="MemoSpace — Demo Library" data-key="og_title_demo" />
+  <meta property="og:description" content="Watch MemoSpace demos: capture with MemoLens, reconstruct via open-source 3DGS tools, and revisit in XR." data-key="og_desc_demo" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/demo-cover.svg" />
   <meta property="og:url" content="./demo.html" />
@@ -20,7 +19,6 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Navbar (same as index) -->
   <header class="navbar" id="navbar">
     <nav class="nav-inner">
       <a class="brand" href="./index.html#hero" aria-label="MemoSpace Home">
@@ -29,38 +27,58 @@
         <span class="badge">by Memory Ferrymen</span>
       </a>
 
-      <!-- Desktop links -->
       <div class="nav-links" data-desktop>
-        <a href="./index.html#features" class="nav-link">Features</a>
-        <a href="./index.html#how" class="nav-link">How it works</a>
-        <a href="./index.html#story" class="nav-link">Story</a>
-        <a href="./index.html#about" class="nav-link">About Us</a>
-        <a href="./index.html#contact" class="nav-link">Contact</a>
-        <a href="./index.html#faq" class="nav-link">FAQ</a>
-        <a href="./index.html#hero" class="btn btn--secondary nav-cta">Back to Home</a>
+        <a href="./index.html#features" class="nav-link" data-key="nav_features">Features</a>
+        <a href="./index.html#how" class="nav-link" data-key="nav_how">How it works</a>
+        <a href="./index.html#story" class="nav-link" data-key="nav_story">Story</a>
+        <a href="./index.html#about" class="nav-link" data-key="nav_about">About Us</a>
+        <a href="./index.html#contact" class="nav-link" data-key="nav_contact">Contact</a>
+        <a href="./index.html#faq" class="nav-link" data-key="nav_faq">FAQ</a>
+        <a href="./index.html#hero" class="btn btn--secondary nav-cta" data-key="nav_back_home">Back to Home</a>
+        
+        <div class="lang-switcher">
+          <button class="lang-btn" id="desktopLangBtn" aria-label="Choose language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </button>
+          <div class="lang-dropdown" id="desktopLangDropdown">
+            <a href="#" class="lang-option" data-lang="en" data-key="lang_en">English (EN)</a>
+            <a href="#" class="lang-option" data-lang="zh-HK" data-key="lang_hk">繁體中文 (HK)</a>
+            <a href="#" class="lang-option" data-lang="zh-CN" data-key="lang_cn">简体中文 (CN)</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Mobile hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" data-key-aria="mobile_menu_open">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </button>
     </nav>
 
-    <!-- Mobile drawer menu -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="./index.html#features" class="mobile-link">Features</a>
-      <a href="./index.html#how" class="mobile-link">How it works</a>
-      <a href="./index.html#story" class="mobile-link">Story</a>
-      <a href="./index.html#about" class="mobile-link">About Us</a>
-      <a href="./index.html#contact" class="mobile-link">Contact</a>
-      <a href="./index.html#faq" class="mobile-link">FAQ</a>
-      <a href="./index.html#hero" class="btn btn--secondary mobile-cta">Back to Home</a>
+      <a href="./index.html#features" class="mobile-link" data-key="nav_features_m">Features</a>
+      <a href="./index.html#how" class="mobile-link" data-key="nav_how_m">How it works</a>
+      <a href="./index.html#story" class="mobile-link" data-key="nav_story_m">Story</a>
+      <a href="./index.html#about" class="mobile-link" data-key="nav_about_m">About Us</a>
+      <a href="./index.html#contact" class="mobile-link" data-key="nav_contact_m">Contact</a>
+      <a href="./index.html#faq" class="mobile-link" data-key="nav_faq_m">FAQ</a>
+      <a href="./index.html#hero" class="btn btn--secondary mobile-cta" data-key="nav_back_home_m">Back to Home</a>
+      
+      <div class="lang-switcher-mobile">
+        <button class="mobile-link lang-btn-mobile" id="mobileLangBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span data-key="mobile_lang_select">Select Language</span>
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="lang-dropdown-mobile" id="mobileLangDropdown">
+          <a href="#" class="mobile-link lang-option" data-lang="en" data-key="lang_en_m">English (EN)</a>
+          <a href="#" class="mobile-link lang-option" data-lang="zh-HK" data-key="lang_hk_m">繁體中文 (HK)</a>
+          <a href="#" class="mobile-link lang-option" data-lang="zh-CN" data-key="lang_cn_m">简体中文 (CN)</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Demo Hero -->
   <section class="section hero" id="demo-hero" aria-label="Demo hero">
     <div class="hero-glows" aria-hidden="true">
       <div class="glow glow--orange"></div>
@@ -68,24 +86,22 @@
     </div>
 
     <div class="container hero-body fade-up inview-on-load">
-      <h1 class="title-xl">Demo Library</h1>
-      <p class="subtitle">
+      <h1 class="title-xl" data-key="demo_hero_title">Demo Library</h1>
+      <p class="subtitle" data-key="demo_hero_subtitle">
         Capture with <strong>MemoLens</strong> → Generate via open-source <strong>3DGS</strong> → Revisit with <strong>MemoSpace</strong>.
       </p>
     </div>
   </section>
 
-  <!-- Demos Grid -->
   <section class="section" id="demo-videos">
     <div class="container text-center fade-up">
-      <h2 class="title-lg">Watch the demos</h2>
-      <p class="muted max-600">Captured with MemoLens and reconstructed via open-source 3DGS tools, then revisited inside MemoSpace.</p>
+      <h2 class="title-lg" data-key="demo_grid_title">Watch the demos</h2>
+      <p class="muted max-600" data-key="demo_grid_subtitle">Captured with MemoLens and reconstructed via open-source 3DGS tools, then revisited inside MemoSpace.</p>
     </div>
 
     <div class="container grid-2 gap-lg stagger" data-stagger>
-      <!-- Video 1 -->
       <article class="card fade-up">
-        <h3 class="card-title">Hong Kong, Sha Tin, Tsang Tai Uk</h3>
+        <h3 class="card-title" data-key="demo_vid1_title">Hong Kong, Sha Tin, Tsang Tai Uk</h3>
         <div class="yt-embed">
           <iframe class="yt-iframe"
             src="https://www.youtube-nocookie.com/embed/GzUmduHRx5s"
@@ -93,14 +109,15 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen loading="lazy">
+            allowfullscreen loading="lazy"
+            data-key-title="demo_vid1_title_video"
+            >
           </iframe>
         </div>
       </article>
 
-      <!-- Video 2 -->
       <article class="card fade-up">
-        <h3 class="card-title">Yunnan, The Confucian Temple</h3>
+        <h3 class="card-title" data-key="demo_vid2_title">Yunnan, The Confucian Temple</h3>
         <div class="yt-embed">
           <iframe class="yt-iframe"
             src="https://www.youtube-nocookie.com/embed/FRXQyQ4a4Nk"
@@ -108,14 +125,15 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen loading="lazy">
+            allowfullscreen loading="lazy"
+            data-key-title="demo_vid2_title_video"
+            >
           </iframe>
         </div>
       </article>
 
-      <!-- Video 3 -->
       <article class="card fade-up">
-        <h3 class="card-title">Yunnan, Double Dragon Bridge</h3>
+        <h3 class="card-title" data-key="demo_vid3_title">Yunnan, Double Dragon Bridge</h3>
         <div class="yt-embed">
           <iframe class="yt-iframe"
             src="https://www.youtube-nocookie.com/embed/OnHBvf-2owQ"
@@ -123,14 +141,15 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen loading="lazy">
+            allowfullscreen loading="lazy"
+            data-key-title="demo_vid3_title_video"
+            >
           </iframe>
         </div>
       </article>
 
-      <!-- Video 4 -->
       <article class="card fade-up">
-        <h3 class="card-title">Yunnan, Tuanshan Village</h3>
+        <h3 class="card-title" data-key="demo_vid4_title">Yunnan, Tuanshan Village</h3>
         <div class="yt-embed">
           <iframe class="yt-iframe"
             src="https://www.youtube-nocookie.com/embed/RimbujMWtBQ"
@@ -138,35 +157,32 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen loading="lazy">
+            allowfullscreen loading="lazy"
+            data-key-title="demo_vid4_title_video"
+            >
           </iframe>
         </div>
       </article>
     </div>
 
-    <!-- Footnote -->
     <div class="container text-center mt-24 fade-up">
       <hr class="divider-glass" />
-      <p class="muted xsmall max-600 mt-12">
+      <p class="muted xsmall max-600 mt-12" data-key="demo_footnote">
         * Generation is performed via third-party open-source 3DGS tools. MemoSpace and MemoLens handle the capture and revisit parts of the workflow.
       </p>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="muted small">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="muted small" data-key="footer_copy">© 2025 Memory Ferrymen. All rights reserved.</div>
       <div class="footer-links">
-        <!-- <a href="#" class="link">Privacy</a>
-        <a href="#" class="link">Terms</a> -->
-        <a href="https://www.instagram.com/ferryman.academy/" class="link" target="_blank" rel="noopener noreferrer" aria-label="Follow Memory Ferrymen on Instagram">Instagram</a>
+        <a href="https://www.instagram.com/ferryman.academy/" class="link" target="_blank" rel="noopener noreferrer" aria-label="Follow Memory Ferrymen on Instagram" data-key="footer_link_ig">Instagram</a>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top">
+  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top" data-key-aria="btt_label" data-key-title="btt_label">
     <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
       <path fill="currentColor" d="M12 5l7 7-1.41 1.41L13 9.83V20h-2V9.83l-4.59 4.58L5 12z"/>
     </svg>

@@ -607,4 +607,301 @@
     });
   })();
 
+  // ============================================================
+  // 14) Language Switcher (NEW)
+  // ============================================================
+  (function () {
+    const translations = {
+      // 頁面標題
+      "doc_title_index": {
+        "en": "MemoSpace — Live inside your memories.",
+        "zh-HK": "MemoSpace — 活在你的記憶之中。",
+        "zh-CN": "MemoSpace — 活在你的记忆之中。"
+      },
+      "doc_title_demo": {
+        "en": "MemoSpace — Demo Library",
+        "zh-HK": "MemoSpace — 範例庫",
+        "zh-CN": "MemoSpace — 示例库"
+      },
+      // Meta (範例)
+      "og_title_index": { "en": "MemoSpace — Live inside your memories.", "zh-HK": "MemoSpace — 活在你的記憶之中。", "zh-CN": "MemoSpace — 活在你的记忆之中。" },
+      "og_desc_index": { "en": "MemoSpace turns everyday videos into immersive 3D spaces...", "zh-HK": "MemoSpace 將日常影片變為沉浸式 3D 空間...", "zh-CN": "MemoSpace 将日常视频变为沉浸式 3D 空间..." },
+      "og_title_demo": { "en": "MemoSpace — Demo Library", "zh-HK": "MemoSpace — 範例庫", "zh-CN": "MemoSpace — 示例库" },
+      "og_desc_demo": { "en": "Watch MemoSpace demos: capture with MemoLens...", "zh-HK": "觀看 MemoSpace 範例：使用 MemoLens 拍攝...", "zh-CN": "观看 MemoSpace 示例：使用 MemoLens 拍摄..." },
+      
+      // 導覽列 (共用)
+      "nav_features": { "en": "Features", "zh-HK": "功能特色", "zh-CN": "功能特色" },
+      "nav_how": { "en": "How it works", "zh-HK": "運作方式", "zh-CN": "运作方式" },
+      "nav_story": { "en": "Story", "zh-HK": "我們的故事", "zh-CN": "我们的故事" },
+      "nav_about": { "en": "About Us", "zh-HK": "關於我們", "zh-CN": "关于我们" },
+      "nav_contact": { "en": "Contact", "zh-HK": "聯絡我們", "zh-CN": "联系我们" },
+      "nav_faq": { "en": "FAQ", "zh-HK": "常見問題", "zh-CN": "常见问题" },
+      "lang_en": { "en": "English (EN)", "zh-HK": "English (EN)", "zh-CN": "English (EN)" },
+      "lang_tw": { "en": "繁體中文 (TW)", "zh-HK": "繁體中文 (TW)", "zh-CN": "繁體中文 (TW)" },
+      "lang_cn": { "en": "简体中文 (CN)", "zh-HK": "简体中文 (CN)", "zh-CN": "简体中文 (CN)" },
+      "mobile_menu_open": { "en": "Open menu", "zh-HK": "開啟選單", "zh-CN": "开启菜单" },
+      "mobile_lang_select": { "en": "Select Language", "zh-HK": "選擇語言", "zh-CN": "选择语言" },
+
+      // 導覽列 (Mobile, data-key 相同)
+      "nav_features_m": { "en": "Features", "zh-HK": "功能特色", "zh-CN": "功能特色" },
+      "nav_how_m": { "en": "How it works", "zh-HK": "運作方式", "zh-CN": "运作方式" },
+      "nav_story_m": { "en": "Story", "zh-HK": "我們的故事", "zh-CN": "我们的故事" },
+      "nav_about_m": { "en": "About Us", "zh-HK": "關於我們", "zh-CN": "关于我们" },
+      "nav_contact_m": { "en": "Contact", "zh-HK": "聯絡我們", "zh-CN": "联系我们" },
+      "nav_faq_m": { "en": "FAQ", "zh-HK": "常見問題", "zh-CN": "常见问题" },
+      "lang_en_m": { "en": "English (EN)", "zh-HK": "English (EN)", "zh-CN": "English (EN)" },
+      "lang_tw_m": { "en": "繁體中文 (TW)", "zh-HK": "繁體中文 (TW)", "zh-CN": "繁體中文 (TW)" },
+      "lang_cn_m": { "en": "简体中文 (CN)", "zh-HK": "简体中文 (CN)", "zh-CN": "简体中文 (CN)" },
+
+      // 導覽列 (不同頁面)
+      "nav_demo": { "en": "Demo", "zh-HK": "觀看範例", "zh-CN": "观看示例" },
+      "nav_demo_m": { "en": "Demo", "zh-HK": "觀看範例", "zh-CN": "观看示例" },
+      "nav_back_home": { "en": "Back to Home", "zh-HK": "返回首頁", "zh-CN": "返回首页" },
+      "nav_back_home_m": { "en": "Back to Home", "zh-HK": "返回首頁", "zh-CN": "返回首页" },
+      
+      // Hero (index.html)
+      "hero_title": { "en": "Live inside your memories.", "zh-HK": "活在你的記憶之中。", "zh-CN": "活在你的记忆之中。" },
+      "hero_subtitle": { "en": "MemoSpace turns everyday videos into immersive 3D spaces—captured with <strong>MemoLens</strong>, rebuilt with 3DGS, and relived in VisionPro.", "zh-HK": "MemoSpace 將日常影片變為沉浸式 3D 空間——透過 <strong>MemoLens</strong> 拍攝，經由 3DGS 重建，並在 VisionPro 中重溫。", "zh-CN": "MemoSpace 将日常视频变为沉浸式 3D 空间——通过 <strong>MemoLens</strong> 拍摄，经由 3DGS 重建，并在 VisionPro 中重温。" },
+      "hero_cta_demo": { "en": "Watch Demo", "zh-HK": "觀看範例", "zh-CN": "观看示例" },
+      "hero_cta_demo_aria": { "en": "Watch Demo", "zh-HK": "觀看範例", "zh-CN": "观看示例" },
+      "hero_cta_visionos": { "en": "Get MemoSpace (VisionOS)", "zh-HK": "取得 MemoSpace (VisionOS)", "zh-CN": "获取 MemoSpace (VisionOS)" },
+      "hero_cta_visionos_aria": { "en": "Get MemoSpace (VisionOS)", "zh-HK": "取得 MemoSpace (VisionOS)", "zh-CN": "获取 MemoSpace (VisionOS)" },
+      "hero_cta_ios": { "en": "Get MemoLens (iOS)", "zh-HK": "取得 MemoLens (iOS)", "zh-CN": "获取 MemoLens (iOS)" },
+      "hero_cta_academy": { "en": "read more on<br><strong>ferryman.academy</strong>", "zh-HK": "前往 <strong>ferryman.academy</strong><br>閱讀更多", "zh-CN": "前往 <strong>ferryman.academy</strong><br>阅读更多" },
+      "hero_cta_academy_aria": { "en": "Read more on ferryman.academy", "zh-HK": "前往 ferryman.academy 閱讀更多", "zh-CN": "前往 ferryman.academy 阅读更多" },
+      "hero_badge_3dgs": { "en": "3D Gaussian Splatting", "zh-HK": "3D 高斯潑濺", "zh-CN": "3D 高斯泼溅" },
+      "hero_badge_visionpro": { "en": "Vision Pro", "zh-HK": "Vision Pro", "zh-CN": "Vision Pro" },
+      "hero_cta_ig": { "en": "Follow on Instagram", "zh-HK": "在 Instagram 上追蹤", "zh-CN": "在 Instagram 上关注" },
+      "hero_cta_ig_aria": { "en": "Follow on Instagram", "zh-HK": "在 Instagram 上追蹤", "zh-CN": "在 Instagram 上关注" },
+
+      // Teaser (index.html)
+      "teaser_title": { "en": "MemoSpace Concept Video", "zh-HK": "MemoSpace 概念影片", "zh-CN": "MemoSpace 概念视频" },
+      "teaser_title_video": { "en": "MemoSpace Concept Video", "zh-HK": "MemoSpace 概念影片", "zh-CN": "MemoSpace 概念视频" },
+
+      // Features (index.html)
+      "features_title": { "en": "From phone video to living memory", "zh-HK": "從手機影片到鮮活記憶", "zh-CN": "从手机视频到鲜活记忆" },
+      "features_subtitle": { "en": "Three steps. Capture, Generate, and Revisit.", "zh-HK": "三步驟：拍攝、生成、重溫。", "zh-CN": "三步骤：拍摄、生成、重温。" },
+      "features_card1_title": { "en": "Capture with MemoLens", "zh-HK": "使用 MemoLens 拍攝", "zh-CN": "使用 MemoLens 拍摄" },
+      "features_card1_desc": { "en": "AR-guided shooting ensures spatial accuracy. Each loop forms the foundation for future 3D reconstruction.", "zh-HK": "AR 引導拍攝確保空間準確性。每個循環都為未來的 3D 重建奠定基礎。", "zh-CN": "AR 引导拍摄确保空间准确性。每个循环都为未来的 3D 重建奠定基础。" },
+      "features_card2_title": { "en": "Generate¹ via 3DGS Engine", "zh-HK": "透過 3DGS 引擎生成¹", "zh-CN": "通过 3DGS 引擎生成¹" },
+      "features_card2_desc": { "en": "Convert videos into realistic 3D scenes using open-source 3DGS reconstruction tools platforms.", "zh-HK": "使用開源 3DGS 重建工具平台，將影片轉換為逼真的 3D 場景。", "zh-CN": "使用开源 3DGS 重建工具平台，将视频转换为逼真的 3D 场景。" },
+      "features_card3_title": { "en": "Revisit with MemoSpace", "zh-HK": "使用 MemoSpace 重溫", "zh-CN": "使用 MemoSpace 重温" },
+      "features_card3_desc": { "en": "Experience the reconstructed scene in VR. Walk back into memories through immersive exploration.", "zh-HK": "在 VR 中體驗重建的場景。透過沉浸式探索走回記憶之中。", "zh-CN": "在 VR 中体验重建的场景。通过沉浸式探索走回记忆之中。" },
+      "features_footnote": { "en": "¹ The generation process is not operated by MemoSpace. Users upload MemoLens-guided videos to open-source 3DGS platforms for reconstruction. MemoSpace and MemoLens are responsible only for the capture and revisit parts of the workflow.", "zh-HK": "¹ 生成過程並非由 MemoSpace 操作。用戶將 MemoLens 引導拍攝的影片上傳至開源 3DGS 平台進行重建。MemoSpace 和 MemoLens 僅負責工作流中的拍攝與重溫部分。", "zh-CN": "¹ 生成过程并非由 MemoSpace 操作。用户将 MemoLens 引导拍摄的视频上传至开源 3DGS 平台进行重建。MemoSpace 和 MemoLens 仅负责工作流中的拍摄与重温部分。" },
+
+      // How it works (index.html)
+      "how_step1": { "en": "Use <strong>MemoLens</strong> for AR-guided 360° recording to ensure spatial precision.", "zh-HK": "使用 <strong>MemoLens</strong> 進行 AR 引導的 360° 錄製，確保空間精度。", "zh-CN": "使用 <strong>MemoLens</strong> 进行 AR 引导的 360° 录制，确保空间精度。" },
+      "how_step2": { "en": "Export your video and process it with an open-source <strong>3DGS</strong> reconstruction engine.", "zh-HK": "匯出您的影片，並使用開源 <strong>3DGS</strong> 重建引擎進行處理。", "zh-CN": "导出您的视频，并使用开源 <strong>3DGS</strong> 重建引擎进行处理。" },
+      "how_step3": { "en": "Import the 3D scene into <strong>MemoSpace</strong> to relive and explore in VR.", "zh-HK": "將 3D 場景匯入 <strong>MemoSpace</strong>，在 VR 中重溫與探索。", "zh-CN": "将 3D 场景导入 <strong>MemoSpace</strong>，在 VR 中重温与探索。" },
+      "how_title": { "en": "From capture to revisit", "zh-HK": "從拍攝到重溫", "zh-CN": "从拍摄到重温" },
+      "how_subtitle": { "en": "Each stage works independently — MemoLens captures, open-source 3DGS rebuilds, and MemoSpace replays. Together they form a seamless bridge between memory and immersion.", "zh-HK": "每個階段獨立運作——MemoLens 負責拍攝，開源 3DGS 負責重建，MemoSpace 負責重播。它們共同構成了記憶與沉浸感之間的無縫橋樑。", "zh-CN": "每个阶段独立运作——MemoLens 负责拍摄，开源 3DGS 负责重建，MemoSpace 负责重播。它们共同构成了记忆与沉浸感之间的无缝桥梁。" },
+      "how_btn": { "en": "View sample scene", "zh-HK": "查看範例場景", "zh-CN": "查看示例场景" },
+      "how_footnote": { "en": "* Powered by open-source 3DGS engine under MIT License.", "zh-HK": "* 由 MIT 授權的開源 3DGS 引擎驅動。", "zh-CN": "* 由 MIT 授权的开源 3DGS 引擎驱动。" },
+
+      // Story (index.html)
+      "story_title": { "en": "Memories that carry people forward", "zh-HK": "承載人們前行的記憶", "zh-CN": "承载人们前行的记忆" },
+      "story_subtitle": { "en": "Born from our Yunnan service-learning journey, MemoSpace preserves places and stories—so families and communities can revisit them together.", "zh-HK": "源於我們的雲南服務學習之旅，MemoSpace 致力於保存地方與故事——讓家庭和社區能共同重溫。", "zh-CN": "源于我们的云南服务学习之旅，MemoSpace 致力于保存地方与故事——让家庭和社区能共同重温。" },
+      "story_chip1": { "en": "SDG 3 · Well-being", "zh-HK": "SDG 3 · 良好健康與福祉", "zh-CN": "SDG 3 · 良好健康与福祉" },
+      "story_chip2": { "en": "SDG 11 · Sustainable Cities", "zh-HK": "SDG 11 · 可持續發展城市及社區", "zh-CN": "SDG 11 · 可持续发展城市及社区" },
+      "story_chip3": { "en": "Digital Heritage", "zh-HK": "數位遺產", "zh-CN": "数字遗产" },
+      "story_panel_title": { "en": "Your data only stays on your device", "zh-HK": "您的資料僅留在您的裝置上", "zh-CN": "您的数据仅留在您的设备上" },
+      "story_panel_desc": { "en": "MemoSpace and MemoLens do not collect or upload any personal data. All captured materials are stored locally on your iPhone and remain fully under your control.", "zh-HK": "MemoSpace 和 MemoLens 不會收集或上傳任何個人資料。所有拍攝的材料都儲存在您 iPhone 的本機，並完全由您掌控。", "zh-CN": "MemoSpace 和 MemoLens 不会收集或上传任何个人数据。所有拍摄的材料都存储在您 iPhone 的本地，并完全由您掌控。" },
+
+      // About (index.html)
+      "about_title": { "en": "Meet the Memory Ferrymen", "zh-HK": "認識「記憶擺渡人」", "zh-CN": "认识“记忆摆渡人”" },
+      "about_subtitle": { "en": "We are a team of creators, engineers, and storytellers from <strong>The Hong Kong Polytechnic University</strong>, united by a mission to preserve human memories through immersive technology.", "zh-HK": "我們是一群來自<strong>香港理工大學</strong>的創作者、工程師和敘事者，因「透過沉浸式技術保存人類記憶」的使命而團結。", "zh-CN": "我们是一群来自<strong>香港理工大学</strong>的创作者、工程师和叙事者，因“通过沉浸式技术保存人类记忆”的使命而团结。" },
+      "about_team1_name": { "en": "Kelvin LI", "zh-HK": "Kelvin LI", "zh-CN": "Kelvin LI" },
+      "about_team1_role": { "en": "Team Captain / Computer Science", "zh-HK": "隊長 / 計算機科學", "zh-CN": "队长 / 计算机科学" },
+      "about_team2_name": { "en": "Bobby LI", "zh-HK": "Bobby LI", "zh-CN": "Bobby LI" },
+      "about_team2_role": { "en": "Team Member / Computer Science", "zh-HK": "隊員 / 計算機科學", "zh-CN": "队员 / 计算机科学" },
+      "about_team3_name": { "en": "Allen LIAN", "zh-HK": "Allen LIAN", "zh-CN": "Allen LIAN" },
+      "about_team3_role": { "en": "Team Member / Computer Science", "zh-HK": "隊員 / 計算機科學", "zh-CN": "队员 / 计算机科学" },
+      "about_advisor_name": { "en": "Prof. <span>Peter H. F. NG</span>", "zh-HK": "<span>吳曉峰</span> 教授", "zh-CN": "<span>吴晓峰</span> 教授" },
+      "about_advisor_role": { "en": "Joint Assistant Professor, Department of Computing and Department of Rehabilitation Sciences, PolyU (H.K.)", "zh-HK": "香港理工大學 電子計算學系及康復治療科學系 聯合助理教授", "zh-CN": "香港理工大学 电子计算学系及康复治疗科学系 联合助理教授" },
+      "about_advisor_chip1": { "en": "HKPolyU", "zh-HK": "香港理大", "zh-CN": "香港理大" },
+      "about_advisor_chip2": { "en": "Department of Computing", "zh-HK": "電子計算學系", "zh-CN": "电子计算学系" },
+      "about_advisor_chip3": { "en": "Department of Rehabilitation Sciences", "zh-HK": "康復治療科學系", "zh-CN": "康复治疗科学系" },
+
+      // Contact (index.html)
+      "contact_title": { "en": "Contact Us", "zh-HK": "聯絡我們", "zh-CN": "联系我们" },
+      "contact_subtitle1": { "en": "Have questions, media inquiries, or collaboration ideas?", "zh-HK": "有任何問題、媒體查詢或合作想法嗎？", "zh-CN": "有任何问题、媒体查询或合作想法吗？" },
+      "contact_subtitle2": { "en": "We’d love to hear from you.", "zh-HK": "我們很樂意聽聽您的意見。", "zh-CN": "我们很乐意听听您的意见。" },
+      "contact_btn_email": { "en": "Email Us", "zh-HK": "Email 聯絡", "zh-CN": "Email 联系" },
+      "contact_btn_email_aria": { "en": "Email Us", "zh-HK": "Email 聯絡", "zh-CN": "Email 联系" },
+      "contact_btn_discord": { "en": "Join our Discuss Group", "zh-HK": "加入討論群組", "zh-CN": "加入讨论群组" },
+      "contact_btn_discord_aria": { "en": "Join our Discuss Group", "zh-HK": "加入討論群組", "zh-CN": "加入讨论群组" },
+      "contact_email_link": { "en": "Or reach us directly at <a href=\"mailto:peter.nhf@polyu.edu.hk\" class=\"link\">peter.nhf@polyu.edu.hk</a>", "zh-HK": "或直接透過 <a href=\"mailto:peter.nhf@polyu.edu.hk\" class=\"link\">peter.nhf@polyu.edu.hk</a> 聯絡我們", "zh-CN": "或直接通过 <a href=\"mailto:peter.nhf@polyu.edu.hk\" class=\"link\">peter.nhf@polyu.edu.hk</a> 联系我们" },
+
+      // FAQ (index.html)
+      "faq_title": { "en": "Quick FAQ", "zh-HK": "常見問題", "zh-CN": "常见问题" },
+      "faq_q1_q": { "en": "Do I need special gear?", "zh-HK": "我需要特殊設備嗎？", "zh-CN": "我需要特殊设备吗？" },
+      "faq_q1_a": { "en": "No. Just your iPhone with MemoLens.", "zh-HK": "不需要。只需您的 iPhone 和 MemoLens。", "zh-CN": "不需要。只需您的 iPhone 和 MemoLens。" },
+      "faq_q2_q": { "en": "Can I post to Instagram?", "zh-HK": "我可以發佈到 Instagram 嗎？", "zh-CN": "我可以发布到 Instagram 吗？" },
+      "faq_q2_a": { "en": "Yes—export short reels or share web scenes via our app.", "zh-HK": "可以——透過我們的 App 匯出短影片或分享網頁場景。", "zh-CN": "可以——通过我们的 App 导出短视频或分享网页场景。" },
+      "faq_q3_q": { "en": "Is my data safe?", "zh-HK": "我的資料安全嗎？", "zh-CN": "我的数据安全吗？" },
+      "faq_q3_a": { "en": "We do not collect any data from your device. All data will only save in your local device.", "zh-HK": "我們不會從您的裝置收集任何資料。所有資料只會儲存在您的本機裝置中。", "zh-CN": "我们不会从您的设备收集任何数据。所有数据只会保存在您的本地设备中。" },
+      "faq_q4_q": { "en": "When can I try it?", "zh-HK": "我什麼時候可以試用？", "zh-CN": "我什么时候可以试用？" },
+      "faq_q4_a": { "en": "Public beta is coming soon. Stay tuned on our latest news.", "zh-HK": "公開測試即將推出。請持續關注我們的最新消息。", "zh-CN": "公开测试即将推出。请持续关注我们的最新消息。" },
+
+      // Footer (index.html)
+      "footer_copy": { "en": "© 2025 Memory Ferrymen. All rights reserved.", "zh-HK": "© 2025 Memory Ferrymen. 版權所有。", "zh-CN": "© 2025 Memory Ferrymen. 版权所有。" },
+      "footer_link_ig": { "en": "Instagram", "zh-HK": "Instagram", "zh-CN": "Instagram" },
+
+      // Modal (index.html)
+      "modal_title": { "en": "Coming Soon", "zh-HK": "即將推出", "zh-CN": "即将推出" },
+      "modal_desc": { "en": "Public beta is coming soon. Stay tuned on our latest news.", "zh-HK": "公開測試即將推出。請持續關注我們的最新消息。", "zh-CN": "公开测试即将推出。请持续关注我们的最新消息。" },
+      "modal_btn_ok": { "en": "OK", "zh-HK": "確定", "zh-CN": "确定" },
+      "modal_close_aria": { "en": "Close", "zh-HK": "關閉", "zh-CN": "关闭" },
+
+      // Back to Top (index.html)
+      "btt_label": { "en": "Back to top", "zh-HK": "回到頂部", "zh-CN": "回到顶部" },
+
+      // Demo Hero (demo.html)
+      "demo_hero_title": { "en": "Demo Library", "zh-HK": "範例庫", "zh-CN": "示例库" },
+      "demo_hero_subtitle": { "en": "Capture with <strong>MemoLens</strong> → Generate via open-source <strong>3DGS</strong> → Revisit with <strong>MemoSpace</strong>.", "zh-HK": "使用 <strong>MemoLens</strong> 拍攝 → 透過開源 <strong>3DGS</strong> 生成 → 使用 <strong>MemoSpace</strong> 重溫。", "zh-CN": "使用 <strong>MemoLens</strong> 拍摄 → 通过开源 <strong>3DGS</strong> 生成 → 使用 <strong>MemoSpace</strong> 重温。" },
+      
+      // Demo Grid (demo.html)
+      "demo_grid_title": { "en": "Watch the demos", "zh-HK": "觀看範例", "zh-CN": "观看示例" },
+      "demo_grid_subtitle": { "en": "Captured with MemoLens and reconstructed via open-source 3DGS tools, then revisited inside MemoSpace.", "zh-HK": "使用 MemoLens 拍攝，透過開源 3DGS 工具重建，然後在 MemoSpace 中重溫。", "zh-CN": "使用 MemoLens 拍摄，通过开源 3DGS 工具重建，然后在 MemoSpace 中重温。" },
+      "demo_vid1_title": { "en": "Hong Kong, Sha Tin, Tsang Tai Uk", "zh-HK": "香港，沙田，曾大屋", "zh-CN": "香港，沙田，曾大屋" },
+      "demo_vid1_title_video": { "en": "Hong Kong, Sha Tin, Tsang Tai Uk", "zh-HK": "香港，沙田，曾大屋", "zh-CN": "香港，沙田，曾大屋" },
+      "demo_vid2_title": { "en": "Yunnan, The Confucian Temple", "zh-HK": "雲南，文廟", "zh-CN": "云南，文庙" },
+      "demo_vid2_title_video": { "en": "Yunnan, The Confucian Temple", "zh-HK": "雲南，文廟", "zh-CN": "云南，文庙" },
+      "demo_vid3_title": { "en": "Yunnan, Double Dragon Bridge", "zh-HK": "雲南，雙龍橋", "zh-CN": "云南，双龙桥" },
+      "demo_vid3_title_video": { "en": "Yunnan, Double Dragon Bridge", "zh-HK": "雲南，雙龍橋", "zh-CN": "云南，双龙桥" },
+      "demo_vid4_title": { "en": "Yunnan, Tuanshan Village", "zh-HK": "雲南，團山村", "zh-CN": "云南，团山村" },
+      "demo_vid4_title_video": { "en": "Yunnan, Tuanshan Village", "zh-HK": "雲南，團山村", "zh-CN": "云南，团山村" },
+      "demo_footnote": { "en": "* Generation is performed via third-party open-source 3DGS tools. MemoSpace and MemoLens handle the capture and revisit parts of the workflow.", "zh-HK": "* 生成是透過第三方開源 3DGS 工具執行。MemoSpace 和 MemoLens 處理工作流中的拍攝和重溫部分。", "zh-CN": "* 生成是通过第三方开源 3DGS 工具执行。MemoSpace 和 MemoLens 处理工作流中的拍摄和重温部分。" }
+    };
+
+    let currentLang = 'en';
+    const pageKey = document.getElementById('demo-hero') ? 'demo' : 'index';
+
+    function applyLanguage(lang) {
+      if (!lang || !translations["nav_features"][lang]) {
+        console.warn(`Language ${lang} not found, defaulting to 'en'.`);
+        lang = 'en';
+      }
+      currentLang = lang;
+      
+      // 更新 HTML 標籤的 lang 屬性
+      document.documentElement.lang = lang.startsWith('zh') ? lang.replace('_', '-') : 'en';
+
+      // 更新頁面標題
+      const titleKey = pageKey === 'demo' ? 'doc_title_demo' : 'doc_title_index';
+      if (translations[titleKey] && translations[titleKey][lang]) {
+        document.title = translations[titleKey][lang];
+      }
+
+      // 更新所有帶 data-key 的元素
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.dataset.key;
+        if (translations[key] && translations[key][lang]) {
+          el.innerHTML = translations[key][lang];
+        }
+      });
+
+      // 更新所有帶 data-key-aria 的元素
+      document.querySelectorAll('[data-key-aria]').forEach(el => {
+        const key = el.dataset.keyAria;
+        if (translations[key] && translations[key][lang]) {
+          el.setAttribute('aria-label', translations[key][lang]);
+        }
+      });
+      
+      // 更新所有帶 data-key-title 的元素
+      document.querySelectorAll('[data-key-title]').forEach(el => {
+        const key = el.dataset.keyTitle;
+        if (translations[key] && translations[key][lang]) {
+          el.setAttribute('title', translations[key][lang]);
+        }
+      });
+
+      // 更新 meta (範例, 可選)
+      // const ogTitle = document.querySelector('[data-key="og_title_' + pageKey + '"]');
+      // if (ogTitle && translations[ogTitle.dataset.key] && translations[ogTitle.dataset.key][lang]) {
+      //   ogTitle.setAttribute('content', translations[ogTitle.dataset.key][lang]);
+      // }
+
+      // 更新所有語言選項的 .is-active 狀態
+      document.querySelectorAll('.lang-option').forEach(opt => {
+        if (opt.dataset.lang === lang) {
+          opt.classList.add('is-active');
+        } else {
+          opt.classList.remove('is-active');
+        }
+      });
+    }
+
+    function getInitialLang() {
+      const savedLang = localStorage.getItem('lang');
+      if (savedLang && translations["nav_features"][savedLang]) {
+        return savedLang;
+      }
+      
+      const browserLang = navigator.language || navigator.userLanguage;
+      if (browserLang.startsWith('zh-HK')) {
+        return 'zh-HK';
+      }
+      if (browserLang.startsWith('zh-CN') || browserLang.startsWith('zh')) {
+        return 'zh-CN';
+      }
+      return 'en';
+    }
+
+    // --- 綁定事件 ---
+
+    // 1. 桌面版切換器
+    const desktopSwitcher = document.getElementById('desktopLangBtn')?.closest('.lang-switcher');
+    const desktopDropdown = document.getElementById('desktopLangDropdown');
+    
+    if (desktopSwitcher && desktopDropdown) {
+      desktopSwitcher.addEventListener('click', (e) => {
+        e.stopPropagation();
+        desktopSwitcher.classList.toggle('is-open');
+      });
+    }
+
+    // 2. 行動版切換器
+    const mobileSwitcher = document.getElementById('mobileLangBtn')?.closest('.lang-switcher-mobile');
+    const mobileDropdown = document.getElementById('mobileLangDropdown');
+
+    if (mobileSwitcher && mobileDropdown) {
+      mobileSwitcher.querySelector('button').addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileSwitcher.classList.toggle('is-open');
+      });
+    }
+
+    // 3. 綁定所有語言選項
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // 阻止觸發父層的 click
+
+        const newLang = option.dataset.lang;
+        if (newLang !== currentLang) {
+          localStorage.setItem('lang', newLang);
+          applyLanguage(newLang);
+        }
+
+        // 關閉選單
+        desktopSwitcher?.classList.remove('is-open');
+        mobileSwitcher?.classList.remove('is-open');
+      });
+    });
+
+    // 4. 點擊外部關閉 (僅桌面版)
+    document.addEventListener('click', (e) => {
+      if (desktopSwitcher && !desktopSwitcher.contains(e.target)) {
+        desktopSwitcher.classList.remove('is-open');
+      }
+    });
+
+    // --- 初始化 ---
+    applyLanguage(getInitialLang());
+
+  })();
+
+
 })(); // IIFE END

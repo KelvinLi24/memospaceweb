@@ -703,3 +703,128 @@ body{
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(221, 42, 123, 0.35);
 }
+
+/* ============================================================
+   14) Language Switcher Styles (NEW)
+   ============================================================ */
+
+/* --- Desktop Switcher --- */
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.lang-btn:hover,
+.lang-switcher.is-open .lang-btn {
+  color: var(--text);
+  border-color: #444;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: none;
+  width: max-content;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: var(--shadow);
+  z-index: 60;
+  overflow: hidden;
+  animation: menuFade .15s ease;
+}
+
+.lang-switcher.is-open .lang-dropdown {
+  display: block;
+}
+
+.lang-option {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lang-option:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.lang-option.is-active {
+  color: var(--orange);
+  font-weight: 700;
+  background: rgba(251, 146, 60, .1);
+}
+
+/* --- Mobile Switcher --- */
+.lang-switcher-mobile {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+.lang-btn-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 6px; /* 保持與 .mobile-link 一致的 padding */
+  padding-right: 6px;
+}
+.lang-btn-mobile:hover {
+  background: rgba(255,255,255,.06);
+}
+
+.lang-btn-mobile .chevron {
+  transition: transform .2s ease;
+}
+
+.lang-switcher-mobile.is-open .lang-btn-mobile .chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-mobile {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease-out;
+  padding-left: 20px; /* 縮排 */
+}
+
+.lang-switcher-mobile.is-open .lang-dropdown-mobile {
+  max-height: 200px; /* 展開 */
+}
+
+/* 行動版選單中的選項 */
+.lang-dropdown-mobile .lang-option {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

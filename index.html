@@ -7,9 +7,8 @@
   <meta name="description" content="MemoSpace turns everyday videos into immersive 3D spaces—captured with MemoLens, rebuilt with 3DGS, and relived in VisionPro." />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="MemoSpace — Live inside your memories." />
-  <meta property="og:description" content="MemoSpace turns everyday videos into immersive 3D spaces—captured with MemoLens, rebuilt with 3DGS, and relived in VisionPro." />
+  <meta property="og:title" content="MemoSpace — Live inside your memories." data-key="og_title_index" />
+  <meta property="og:description" content="MemoSpace turns everyday videos into immersive 3D spaces—captured with MemoLens, rebuilt with 3DGS, and relived in VisionPro." data-key="og_desc_index" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/demo-cover.svg" />
   <meta property="og:url" content="." />
@@ -20,7 +19,6 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Navbar (Fixed on top + Hamburger RWD) -->
   <header class="navbar" id="navbar">
     <nav class="nav-inner">
       <a class="brand" href="#hero" aria-label="MemoSpace Home">
@@ -29,112 +27,123 @@
         <span class="badge">by Memory Ferrymen</span>
       </a>
 
-      <!-- Desktop links -->
       <div class="nav-links" data-desktop>
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#how" class="nav-link">How it works</a>
-        <a href="#story" class="nav-link">Story</a>
-        <a href="#about" class="nav-link">About Us</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="./demo.html" class="btn btn--primary nav-cta">Demo</a>
+        <a href="#features" class="nav-link" data-key="nav_features">Features</a>
+        <a href="#how" class="nav-link" data-key="nav_how">How it works</a>
+        <a href="#story" class="nav-link" data-key="nav_story">Story</a>
+        <a href="#about" class="nav-link" data-key="nav_about">About Us</a>
+        <a href="#contact" class="nav-link" data-key="nav_contact">Contact</a>
+        <a href="#faq" class="nav-link" data-key="nav_faq">FAQ</a>
+        <a href="./demo.html" class="btn btn--primary nav-cta" data-key="nav_demo">Demo</a>
+        
+        <div class="lang-switcher">
+          <button class="lang-btn" id="desktopLangBtn" aria-label="Choose language">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </button>
+          <div class="lang-dropdown" id="desktopLangDropdown">
+            <a href="#" class="lang-option" data-lang="en" data-key="lang_en">English (EN)</a>
+            <a href="#" class="lang-option" data-lang="zh-HK" data-key="lang_hk">繁體中文 (HK)</a>
+            <a href="#" class="lang-option" data-lang="zh-CN" data-key="lang_cn">简体中文 (CN)</a>
+          </div>
+        </div>
       </div>
 
-      <!-- Mobile hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" data-key-aria="mobile_menu_open">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
       </button>
     </nav>
 
-    <!-- Mobile drawer menu -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#features" class="mobile-link">Features</a>
-      <a href="#how" class="mobile-link">How it works</a>
-      <a href="#story" class="mobile-link">Story</a>
-      <a href="#about" class="mobile-link">About Us</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <a href="#faq" class="mobile-link">FAQ</a>
-      <a href="./demo.html" class="btn btn--primary mobile-cta">Demo</a>
+      <a href="#features" class="mobile-link" data-key="nav_features_m">Features</a>
+      <a href="#how" class="mobile-link" data-key="nav_how_m">How it works</a>
+      <a href="#story" class="mobile-link" data-key="nav_story_m">Story</a>
+      <a href="#about" class="mobile-link" data-key="nav_about_m">About Us</a>
+      <a href="#contact" class="mobile-link" data-key="nav_contact_m">Contact</a>
+      <a href="#faq" class="mobile-link" data-key="nav_faq_m">FAQ</a>
+      <a href="./demo.html" class="btn btn--primary mobile-cta" data-key="nav_demo_m">Demo</a>
+      
+      <div class="lang-switcher-mobile">
+        <button class="mobile-link lang-btn-mobile" id="mobileLangBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span data-key="mobile_lang_select">Select Language</span>
+          <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="lang-dropdown-mobile" id="mobileLangDropdown">
+          <a href="#" class="mobile-link lang-option" data-lang="en" data-key="lang_en_m">English (EN)</a>
+          <a href="#" class="mobile-link lang-option" data-lang="zh-HK" data-key="lang_hk_m">繁體中文 (HK)</a>
+          <a href="#" class="mobile-link lang-option" data-lang="zh-CN" data-key="lang_cn_m">简体中文 (CN)</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <section id="hero" class="section hero" aria-label="Hero section">
-    <!-- Parallax Glows -->
     <div class="hero-glows" aria-hidden="true">
       <div id="glowA" class="glow glow--orange"></div>
       <div id="glowB" class="glow glow--sky"></div>
     </div>
 
     <div class="container hero-body fade-up inview-on-load" id="heroBody">
-      <h1 class="title-xl">Live inside your memories.</h1>
-      <p class="subtitle">
+      <h1 class="title-xl" data-key="hero_title">Live inside your memories.</h1>
+      <p class="subtitle" data-key="hero_subtitle">
         MemoSpace turns everyday videos into immersive 3D spaces—captured with
         <strong>MemoLens</strong>, rebuilt with 3DGS, and relived in VisionPro.
       </p>
 
       <div class="hero-ctas">
-        <!-- Magnetic button wrapper -->
         <div class="magnet-wrap">
-          <a href="./demo.html" class="btn btn--primary magnet" id="magBtn" aria-label="Watch Demo">
-            <!-- Play icon -->
+          <a href="./demo.html" class="btn btn--primary magnet" id="magBtn" aria-label="Watch Demo" data-key-aria="hero_cta_demo_aria">
             <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-            Watch Demo
+            <span data-key="hero_cta_demo">Watch Demo</span>
           </a>
         </div>
 
-        <!-- NEW: VisionOS button (opens beta modal) -->
-        <a href="#" class="btn btn--secondary" data-open="beta" aria-label="Get MemoSpace (VisionOS)">
-          <!-- Headset icon -->
+        <a href="#" class="btn btn--secondary" data-open="beta" aria-label="Get MemoSpace (VisionOS)" data-key-aria="hero_cta_visionos_aria">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M4 10a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3a3 3 0 0 1-3 3h-1.5a2.5 2.5 0 0 1-2.5-2.5V13H9v.5A2.5 2.5 0 0 1 6.5 16H5a3 3 0 0 1-3-3v-3Z"/></svg>
-          Get MemoSpace (VisionOS)
+          <span data-key="hero_cta_visionos">Get MemoSpace (VisionOS)</span>
         </a>
 
-        <!-- Existing iOS button (now also opens beta modal) -->
-        <a href="#" class="btn btn--secondary" data-open="beta">
-          <!-- Phone icon -->
+        <a href="#" class="btn btn--secondary" data-open="beta" data-key="hero_cta_ios">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M17 1H7a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm0 18H7V5h10Z"/></svg>
           Get MemoLens (iOS)
         </a>
 
-        <!-- NEW: Ferryman Academy button -->
         <a href="https://www.ferryman.academy"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn--gradient"
-          aria-label="Read more on ferryman.academy">
-          <!-- Info icon -->
+          aria-label="Read more on ferryman.academy"
+          data-key-aria="hero_cta_academy_aria">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon" aria-hidden="true">
             <path fill="currentColor" d="M11 9h2V7h-2v2Zm0 8h2v-6h-2v6Zm1-16a10 10 0 1 0 0 20a10 10 0 0 0 0-20Z"/>
           </svg>
-          read more on<br><strong>ferryman.academy</strong>
+          <span data-key="hero_cta_academy">read more on<br><strong>ferryman.academy</strong></span>
         </a>
       </div>
 
       <div class="hero-badges">
-        <span class="badge badge--outline">3D Gaussian Splatting</span>
-        <span class="badge badge--outline">Vision Pro</span>
-        <!-- NEW: Instagram gradient button -->
+        <span class="badge badge--outline" data-key="hero_badge_3dgs">3D Gaussian Splatting</span>
+        <span class="badge badge--outline" data-key="hero_badge_visionpro">Vision Pro</span>
         <a href="https://www.instagram.com/ferryman.academy/"
           class="btn btn--instagram"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Follow on Instagram">
+          aria-label="Follow on Instagram"
+          data-key-aria="hero_cta_ig_aria">
           <svg width="14" height="14" viewBox="0 0 24 24" class="icon">
             <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm5 3a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 14.8 12A2.8 2.8 0 0 0 12 9.2Zm5.6-1.8a.9.9 0 1 1-.9.9a.9.9 0 0 1 .9-.9Z"/>
           </svg>
-          Follow on Instagram
+          <span data-key="hero_cta_ig">Follow on Instagram</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Visual Teaser (YouTube Embed — Final) -->
   <section class="section" id="teaser-section">
     <div class="container text-center fade-up">
-      <h2 class="title-lg" style="margin-bottom: 24px;">MemoSpace Concept Video</h2>
+      <h2 class="title-lg" style="margin-bottom: 24px;" data-key="teaser_title">MemoSpace Concept Video</h2>
     </div>
 
     <div class="container teaser-wrap fade-up">
@@ -150,7 +159,9 @@
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
               loading="lazy"
-              style="width:100%; aspect-ratio:16/9; border:none;">
+              style="width:100%; aspect-ratio:16/9; border:none;"
+              data-key-title="teaser_title_video"
+              >
             </iframe>
           </div>
         </div>
@@ -158,57 +169,55 @@
     </div>
   </section>
 
-  <!-- Features -->
   <section id="features" class="section">
     <div class="container text-center fade-up">
-      <h2 class="title-lg">From phone video to living memory</h2>
-      <p class="muted">Three steps. Capture, Generate, and Revisit.</p>
+      <h2 class="title-lg" data-key="features_title">From phone video to living memory</h2>
+      <p class="muted" data-key="features_subtitle">Three steps. Capture, Generate, and Revisit.</p>
     </div>
 
     <div class="container grid-3 gap-lg stagger" data-stagger>
       <article class="card fade-up">
-        <h3 class="card-title">
+        <h3 class="card-title" data-key="features_card1_title">
           <svg width="18" height="18" viewBox="0 0 24 24" class="icon">
             <path fill="currentColor" d="M9.4 4l1.2-2h2.8l1.2 2H20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm2.6 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8Z"/>
           </svg>
           Capture with MemoLens
         </h3>
-        <p class="muted">
+        <p class="muted" data-key="features_card1_desc">
           AR-guided shooting ensures spatial accuracy.  
           Each loop forms the foundation for future 3D reconstruction.
         </p>
       </article>
 
       <article class="card fade-up">
-        <h3 class="card-title">
+        <h3 class="card-title" data-key="features_card2_title">
           <svg width="18" height="18" viewBox="0 0 24 24" class="icon">
             <path fill="currentColor" d="M12 3l1.5 3.5L17 8l-3.5 1.5L12 13l-1.5-3.5L7 8l3.5-1.5Z"/>
           </svg>
           Generate¹ via 3DGS Engine
         </h3>
-        <p class="muted">
+        <p class="muted" data-key="features_card2_desc">
           Convert videos into realistic 3D scenes using open-source 3DGS reconstruction tools platforms.
         </p>
       </article>
 
       <article class="card fade-up">
-        <h3 class="card-title">
+        <h3 class="card-title" data-key="features_card3_title">
           <svg width="18" height="18" viewBox="0 0 24 24" class="icon">
             <path fill="currentColor" d="M12 3a9 9 0 0 1 9 9v6a3 3 0 0 1-3 3h-1v-8h2a7 7 0 0 0-14 0h2v8H6a3 3 0 0 1-3-3v-6a9 9 0 0 1 9-9Z"/>
           </svg>
           Revisit with MemoSpace
         </h3>
-        <p class="muted">
+        <p class="muted" data-key="features_card3_desc">
           Experience the reconstructed scene in VR.  
           Walk back into memories through immersive exploration.
         </p>
       </article>
     </div>
 
-  <!-- Footnote explanation -->
   <div class="container text-left mt-24 fade-up">
     <hr class="divider-glass" />
-    <p class="muted xsmall max-600 mt-12">
+    <p class="muted xsmall max-600 mt-12" data-key="features_footnote">
       ¹ The generation process is not operated by MemoSpace.  
       Users upload MemoLens-guided videos to open-source 3DGS platforms for reconstruction.  
       MemoSpace and MemoLens are responsible only for the capture and revisit parts of the workflow.
@@ -216,22 +225,21 @@
   </div>
   </section>
 
-  <!-- How it works -->
   <section id="how" class="section">
     <div class="container grid-2 gap-xl">
       <div class="fade-up">
         <div class="panel">
           <ol class="steps">
-            <li><span class="num">1</span> Use <strong>MemoLens</strong> for AR-guided 360° recording to ensure spatial precision.</li>
-            <li><span class="num">2</span> Export your video and process it with an open-source <strong>3DGS</strong> reconstruction engine.</li>
-            <li><span class="num">3</span> Import the 3D scene into <strong>MemoSpace</strong> to relive and explore in VR.</li>
+            <li data-key="how_step1"><span class="num">1</span> Use <strong>MemoLens</strong> for AR-guided 360° recording to ensure spatial precision.</li>
+            <li data-key="how_step2"><span class="num">2</span> Export your video and process it with an open-source <strong>3DGS</strong> reconstruction engine.</li>
+            <li data-key="how_step3"><span class="num">3</span> Import the 3D scene into <strong>MemoSpace</strong> to relive and explore in VR.</li>
           </ol>
         </div>
       </div>
 
       <div class="fade-up">
-        <h3 class="title-lg">From capture to revisit</h3>
-        <p class="muted">
+        <h3 class="title-lg" data-key="how_title">From capture to revisit</h3>
+        <p class="muted" data-key="how_subtitle">
           Each stage works independently — MemoLens captures,  
           open-source 3DGS rebuilds, and MemoSpace replays.  
           Together they form a seamless bridge between memory and immersion.
@@ -241,29 +249,27 @@
             <svg width="16" height="16" viewBox="0 0 24 24" class="icon">
               <path fill="currentColor" d="M14 3h7v7h-2V7.41l-9.29 9.3l-1.42-1.42l9.3-9.29H14zM5 5h6v2H7v10h10v-4h2v6H5z"/>
             </svg>
-            View sample scene
+            <span data-key="how_btn">View sample scene</span>
           </a>
-          <!-- <a href="#" class="btn btn--ghost">Docs</a> -->
-        </div>
-        <p class="muted small mt-16">
+          </div>
+        <p class="muted small mt-16" data-key="how_footnote">
           * Powered by open-source 3DGS engine under MIT License.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Story -->
   <section id="story" class="section">
     <div class="container grid-story gap-xl stagger" data-stagger>
       <div class="fade-up">
-        <h3 class="title-lg">Memories that carry people forward</h3>
-        <p class="muted">
+        <h3 class="title-lg" data-key="story_title">Memories that carry people forward</h3>
+        <p class="muted" data-key="story_subtitle">
           Born from our Yunnan service-learning journey, MemoSpace preserves places and stories—so families and communities can revisit them together.
         </p>
         <div class="chip-row">
-          <span class="chip chip--green">SDG 3 · Well-being</span>
-          <span class="chip chip--orange">SDG 11 · Sustainable Cities</span>
-          <span class="chip chip--outline">Digital Heritage</span>
+          <span class="chip chip--green" data-key="story_chip1">SDG 3 · Well-being</span>
+          <span class="chip chip--orange" data-key="story_chip2">SDG 11 · Sustainable Cities</span>
+          <span class="chip chip--outline" data-key="story_chip3">Digital Heritage</span>
         </div>
       </div>
 
@@ -274,8 +280,8 @@
               <path fill="currentColor" d="M12 2l8 4v6c0 5-3.4 9.4-8 10c-4.6-.6-8-5-8-10V6l8-4Zm0 3.2L6.5 7.7V12c0 3.7 2.4 7 5.5 7.7c3.1-.7 5.5-4 5.5-7.7V7.7L12 5.2Z"/>
             </svg>
             <div>
-              <div class="panel-title">Your data only stays on your device</div>
-              <div class="muted small">
+              <div class="panel-title" data-key="story_panel_title">Your data only stays on your device</div>
+              <div class="muted small" data-key="story_panel_desc">
                 MemoSpace and MemoLens do not collect or upload any personal data.  
                 All captured materials are stored locally on your iPhone and remain fully under your control.
               </div>
@@ -286,137 +292,112 @@
     </div>
   </section>
 
-<!-- About Us -->
 <section id="about" class="section">
   <div class="container text-center fade-up">
-    <h3 class="title-lg">Meet the Memory Ferrymen</h3>
-    <p class="muted">
+    <h3 class="title-lg" data-key="about_title">Meet the Memory Ferrymen</h3>
+    <p class="muted" data-key="about_subtitle">
       We are a team of creators, engineers, and storytellers from
       <strong>The Hong Kong Polytechnic University</strong>, united by a mission to preserve human memories through immersive technology.
     </p>
   </div>
 
-  <!-- 上排：3 位成員 -->
   <div class="container grid-3 gap-lg stagger" data-stagger>
     <article class="card fade-up team">
       <img src="./assets/team-captain.png" alt="Team Captain — Kelvin LI" class="avatar" />
-      <div class="team-name">Kelvin LI</div>
-      <div class="muted small">Team Captain / Computer Science</div>
+      <div class="team-name" data-key="about_team1_name">Kelvin LI</div>
+      <div class="muted small" data-key="about_team1_role">Team Captain / Computer Science</div>
     </article>
 
     <article class="card fade-up team">
       <img src="./assets/team-1.png" alt="Team Member — Bobby LI" class="avatar" />
-      <div class="team-name">Bobby LI</div>
-      <div class="muted small">Team Member / Computer Science</div>
+      <div class="team-name" data-key="about_team2_name">Bobby LI</div>
+      <div class="muted small" data-key="about_team2_role">Team Member / Computer Science</div>
     </article>
 
     <article class="card fade-up team">
       <img src="./assets/team-2.png" alt="Team Member — Allen LIAN" class="avatar" />
-      <div class="team-name">Allen LIAN</div>
-      <div class="muted small">Team Member / Computer Science</div>
+      <div class="team-name" data-key="about_team3_name">Allen LIAN</div>
+      <div class="muted small" data-key="about_team3_role">Team Member / Computer Science</div>
     </article>
   </div>
 
-  <!-- 下排：指導老師一張大卡 -->
   <div class="container mt-16">
     <article class="card advisor fade-up" aria-labelledby="advisor-name">
       <img src="./assets/advisor.png" alt="Advisor portrait" class="avatar avatar--lg" />
       <div class="advisor-body">
-        <h4 id="advisor-name" class="advisor-name">Prof. <span>Peter H. F. NG</span></h4>
-        <p class="muted small">
+        <h4 id="advisor-name" class="advisor-name" data-key="about_advisor_name">Prof. <span>Peter H. F. NG</span></h4>
+        <p class="muted small" data-key="about_advisor_role">
           Joint Assistant Professor, Department of Computing and Department of Rehabilitation Sciences, PolyU (H.K.)
         </p>
         <div class="chip-row mt-8">
-          <span class="chip chip--outline">HKPolyU</span>
-          <span class="chip chip--outline">Department of Computing</span>
-          <span class="chip chip--outline">Department of Rehabilitation Sciences</span>
+          <span class="chip chip--outline" data-key="about_advisor_chip1">HKPolyU</span>
+          <span class="chip chip--outline" data-key="about_advisor_chip2">Department of Computing</span>
+          <span class="chip chip--outline" data-key="about_advisor_chip3">Department of Rehabilitation Sciences</span>
         </div>
       </div>
     </article>
   </div>
 </section>
 
-  <!-- Contact -->
   <section id="contact" class="section">
     <div class="container text-center fade-up">
-      <h3 class="title-lg">Contact Us</h3>
-      <p class="muted max-600">Have questions, media inquiries, or collaboration ideas?</p>
-      <p class="muted max-600">We’d love to hear from you.</p>
+      <h3 class="title-lg" data-key="contact_title">Contact Us</h3>
+      <p class="muted max-600" data-key="contact_subtitle1">Have questions, media inquiries, or collaboration ideas?</p>
+      <p class="muted max-600" data-key="contact_subtitle2">We’d love to hear from you.</p>
       <div class="btn-row center">
-        <a class="btn btn--secondary" href="mailto:peter.nhf@polyu.edu.hk" aria-label="Email Us">
+        <a class="btn btn--secondary" href="mailto:peter.nhf@polyu.edu.hk" aria-label="Email Us" data-key-aria="contact_btn_email_aria">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v1l-10 6L2 7V6a2 2 0 0 1 2-2Zm18 5.2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.2l10 6Z"/></svg>
-          Email Us
+          <span data-key="contact_btn_email">Email Us</span>
         </a>
-        <a class="btn btn--primary" href="#" aria-label="Join our Discord">
+        <a class="btn btn--primary" href="#" aria-label="Join our Discord" data-key-aria="contact_btn_discord_aria">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg>
-          Join our Discuss Group
+          <span data-key="contact_btn_discord">Join our Discuss Group</span>
         </a>
       </div>
-      <div class="muted small mt-16">Or reach us directly at <a href="mailto:peter.nhf@polyu.edu.hk" class="link">peter.nhf@polyu.edu.hk</a></div>
+      <div class="muted small mt-16" data-key="contact_email_link">Or reach us directly at <a href="mailto:peter.nhf@polyu.edu.hk" class="link">peter.nhf@polyu.edu.hk</a></div>
 
-      <!--
-      Optional Contact Form (commented)
-      <form action="https://formspree.io/f/your-id" method="POST" class="contact-form">
-        <label>
-          <span>Name</span>
-          <input name="name" required />
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button class="btn btn--primary" type="submit">Send</button>
-      </form>
-      -->
-    </div>
+      </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="container text-center fade-up">
-      <h3 class="title-lg">Quick FAQ</h3>
+      <h3 class="title-lg" data-key="faq_title">Quick FAQ</h3>
     </div>
 
     <div class="container grid-2 gap-lg stagger" data-stagger>
       <article class="card card--hoverrise fade-up">
-        <h4 class="card-title">Do I need special gear?</h4>
-        <p class="muted">No. Just your iPhone with MemoLens.</p>
+        <h4 class="card-title" data-key="faq_q1_q">Do I need special gear?</h4>
+        <p class="muted" data-key="faq_q1_a">No. Just your iPhone with MemoLens.</p>
       </article>
 
       <article class="card card--hoverrise fade-up">
-        <h4 class="card-title">Can I post to Instagram?</h4>
-        <p class="muted">Yes—export short reels or share web scenes via our app.</p>
+        <h4 class="card-title" data-key="faq_q2_q">Can I post to Instagram?</h4>
+        <p class="muted" data-key="faq_q2_a">Yes—export short reels or share web scenes via our app.</p>
       </article>
 
       <article class="card card--hoverrise fade-up">
-        <h4 class="card-title">Is my data safe?</h4>
-        <p class="muted">We do not collect any data from your device. All data will only save in your local device.</p>
+        <h4 class="card-title" data-key="faq_q3_q">Is my data safe?</h4>
+        <p class="muted" data-key="faq_q3_a">We do not collect any data from your device. All data will only save in your local device.</p>
       </article>
 
       <article class="card card--hoverrise fade-up">
-        <h4 class="card-title">When can I try it?</h4>
-        <p class="muted">Public beta is coming soon. Stay tuned on our latest news.</p>
+        <h4 class="card-title" data-key="faq_q4_q">When can I try it?</h4>
+        <p class="muted" data-key="faq_q4_a">Public beta is coming soon. Stay tuned on our latest news.</p>
       </article>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="muted small">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="muted small" data-key="footer_copy">© 2025 Memory Ferrymen. All rights reserved.</div>
       <div class="footer-links">
-        <!-- <a href="#" class="link">Privacy</a>
-        <a href="#" class="link">Terms</a> -->
         <a
           href="https://www.instagram.com/ferryman.academy/"
           class="link"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Follow Memory Ferrymen on Instagram"
+          data-key="footer_link_ig"
         >
           Instagram
         </a>
@@ -424,23 +405,21 @@
     </div>
   </footer>
 
-  <!-- Beta Modal -->
   <div class="modal" id="betaModal" aria-hidden="true" role="dialog" aria-labelledby="betaTitle" aria-modal="true">
     <div class="modal__backdrop" data-close="beta"></div>
     <div class="modal__dialog" role="document">
-      <button class="modal__close" type="button" aria-label="Close" data-close="beta">×</button>
+      <button class="modal__close" type="button" aria-label="Close" data-close="beta" data-key-aria="modal_close_aria">×</button>
       <div class="modal__body">
-        <h4 id="betaTitle" class="title-lg" style="margin:0 0 8px;">Coming Soon</h4>
-        <p class="muted" style="margin:0;">Public beta is coming soon. Stay tuned on our latest news.</p>
+        <h4 id="betaTitle" class="title-lg" style="margin:0 0 8px;" data-key="modal_title">Coming Soon</h4>
+        <p class="muted" style="margin:0;" data-key="modal_desc">Public beta is coming soon. Stay tuned on our latest news.</p>
       </div>
       <div class="modal__actions">
-        <button class="btn btn--primary" type="button" data-close="beta">OK</button>
+        <button class="btn btn--primary" type="button" data-close="beta" data-key="modal_btn_ok">OK</button>
       </div>
     </div>
   </div>
 
-  <!-- Back to Top -->
-  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top">
+  <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top" data-key-aria="btt_label" data-key-title="btt_label">
     <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
       <path fill="currentColor" d="M12 5l7 7-1.41 1.41L13 9.83V20h-2V9.83l-4.59 4.58L5 12z"/>
     </svg>
