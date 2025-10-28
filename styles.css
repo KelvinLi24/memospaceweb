@@ -828,3 +828,18 @@ body{
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/* ============================================================
+   15) Hero Crossover Logo (RWD Update)
+   ============================================================ */
+.hero-crossover-logo {
+  text-align: center;
+  margin-bottom: 24px; /* 恢復適當的 logo 和標題間距 */
+}
+
+.hero-crossover-logo img {
+  width: 60%;         /* <--- 主要寬度設為容器的 60% */
+  max-width: 2400px;   /* <--- 但最大不超過 320px */
+  height: auto;
+  opacity: 0.9;
+}
