@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>MemoSpace — Demos & Workflow</title>
+  <title>MemoSpace — Demo Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="See MemoSpace in action: workflow overview and demo videos." />
+  <meta name="description" content="Watch MemoSpace demos: capture with MemoLens, reconstruct via open-source 3DGS tools, and revisit in XR." />
   <meta name="theme-color" content="#000000" />
-  <meta property="og:title" content="MemoSpace — Demos & Workflow" />
-  <meta property="og:description" content="See MemoSpace in action: workflow overview and demo videos." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="MemoSpace — Demo Library" />
+  <meta property="og:description" content="Watch MemoSpace demos: capture with MemoLens, reconstruct via open-source 3DGS tools, and revisit in XR." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/demo-cover.svg" />
   <meta property="og:url" content="./demo.html" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar (same as index) -->
   <header class="navbar" id="navbar">
     <nav class="nav-inner">
       <a class="brand" href="./index.html#hero" aria-label="MemoSpace Home">
@@ -26,6 +29,7 @@
         <span class="badge">by Memory Ferrymen</span>
       </a>
 
+      <!-- Desktop links -->
       <div class="nav-links" data-desktop>
         <a href="./index.html#features" class="nav-link">Features</a>
         <a href="./index.html#how" class="nav-link">How it works</a>
@@ -33,9 +37,10 @@
         <a href="./index.html#about" class="nav-link">About Us</a>
         <a href="./index.html#contact" class="nav-link">Contact</a>
         <a href="./index.html#faq" class="nav-link">FAQ</a>
-        <a href="./index.html" class="btn btn--primary nav-cta">Back Home</a>
+        <a href="./index.html#hero" class="btn btn--secondary nav-cta">Back to Home</a>
       </div>
 
+      <!-- Mobile hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -43,6 +48,7 @@
       </button>
     </nav>
 
+    <!-- Mobile drawer menu -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="./index.html#features" class="mobile-link">Features</a>
       <a href="./index.html#how" class="mobile-link">How it works</a>
@@ -50,105 +56,114 @@
       <a href="./index.html#about" class="mobile-link">About Us</a>
       <a href="./index.html#contact" class="mobile-link">Contact</a>
       <a href="./index.html#faq" class="mobile-link">FAQ</a>
-      <a href="./index.html" class="btn btn--primary mobile-cta">Back Home</a>
+      <a href="./index.html#hero" class="btn btn--secondary mobile-cta">Back to Home</a>
     </div>
   </header>
 
-  <!-- Workflow / Architecture -->
-  <section class="section">
-    <div class="container fade-up">
-      <h1 class="title-lg">Workflow & Architecture</h1>
-      <p class="muted max-600">
-        This diagram summarizes our capture → reconstruct → relive pipeline. Replace the image with your latest architecture if needed.
+  <!-- Demo Hero -->
+  <section class="section hero" id="demo-hero" aria-label="Demo hero">
+    <div class="hero-glows" aria-hidden="true">
+      <div class="glow glow--orange"></div>
+      <div class="glow glow--sky"></div>
+    </div>
+
+    <div class="container hero-body fade-up inview-on-load">
+      <h1 class="title-xl">Demo Library</h1>
+      <p class="subtitle">
+        Capture with <strong>MemoLens</strong> → Generate via open-source <strong>3DGS</strong> → Revisit with <strong>MemoSpace</strong>.
       </p>
-
-      <figure class="figure">
-        <img src="./assets/flow-architecture.svg" alt="MemoSpace workflow architecture diagram" class="figure-img" />
-        <figcaption class="figure-cap muted small">MemoLens capture → 3DGS reconstruction → MemoSpace XR → MemoPortal sharing</figcaption>
-      </figure>
     </div>
   </section>
 
-  <!-- Demo Videos -->
-  <section class="section">
-    <div class="container fade-up">
-      <h2 class="title-lg">Watch the Demos</h2>
-      <p class="muted max-600">Short clips showcasing capture guidance, reconstruction quality, and XR navigation.</p>
+  <!-- Demos Grid -->
+  <section class="section" id="demo-videos">
+    <div class="container text-center fade-up">
+      <h2 class="title-lg">Watch the demos</h2>
+      <p class="muted max-600">Captured with MemoLens and reconstructed via open-source 3DGS tools, then revisited inside MemoSpace.</p>
     </div>
 
-    <div class="container video-grid fade-up">
-      <!-- Replace VIDEO_ID_X with your YouTube IDs -->
-      <div class="video-card card">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_1"
-            title="Demo 1 — Capture with MemoLens"
-            loading="lazy" allowfullscreen
+    <div class="container grid-2 gap-lg stagger" data-stagger>
+      <!-- Video 1 -->
+      <article class="card fade-up">
+        <h3 class="card-title">Hong Kong, Sha Tin, Tsang Tai Uk</h3>
+        <div class="yt-embed">
+          <iframe class="yt-iframe"
+            src="https://www.youtube-nocookie.com/embed/GzUmduHRx5s"
+            title="Hong Kong, Sha Tin, Tsang Tai Uk"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            allowfullscreen loading="lazy">
           </iframe>
         </div>
-        <h3 class="card-title">Capture with MemoLens</h3>
-        <p class="muted small">AR ring guidance and multi-height loop capture.</p>
-      </div>
+      </article>
 
-      <div class="video-card card">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_2"
-            title="Demo 2 — 3DGS Reconstruction"
-            loading="lazy" allowfullscreen
+      <!-- Video 2 -->
+      <article class="card fade-up">
+        <h3 class="card-title">Yunnan, The Confucian Temple</h3>
+        <div class="yt-embed">
+          <iframe class="yt-iframe"
+            src="https://www.youtube-nocookie.com/embed/FRXQyQ4a4Nk"
+            title="Yunnan, The Confucian Temple"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            allowfullscreen loading="lazy">
           </iframe>
         </div>
-        <h3 class="card-title">3DGS Reconstruction</h3>
-        <p class="muted small">From handheld video to photorealistic 3D scene.</p>
-      </div>
+      </article>
 
-      <div class="video-card card">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_3"
-            title="Demo 3 — XR Walkthrough"
-            loading="lazy" allowfullscreen
+      <!-- Video 3 -->
+      <article class="card fade-up">
+        <h3 class="card-title">Yunnan, Double Dragon Bridge</h3>
+        <div class="yt-embed">
+          <iframe class="yt-iframe"
+            src="https://www.youtube-nocookie.com/embed/OnHBvf-2owQ"
+            title="Yunnan, Double Dragon Bridge"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            allowfullscreen loading="lazy">
           </iframe>
         </div>
-        <h3 class="card-title">XR Walkthrough</h3>
-        <p class="muted small">Navigate, pause, and relive moments on Vision Pro / Quest.</p>
-      </div>
+      </article>
 
-      <div class="video-card card">
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_4"
-            title="Demo 4 — MemoPortal Sharing"
-            loading="lazy" allowfullscreen
+      <!-- Video 4 -->
+      <article class="card fade-up">
+        <h3 class="card-title">Yunnan, Tuanshan Village</h3>
+        <div class="yt-embed">
+          <iframe class="yt-iframe"
+            src="https://www.youtube-nocookie.com/embed/RimbujMWtBQ"
+            title="Yunnan, Tuanshan Village"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            allowfullscreen loading="lazy">
           </iframe>
         </div>
-        <h3 class="card-title">MemoPortal Sharing</h3>
-        <p class="muted small">Web playback, embedding, and collaborative curation.</p>
-      </div>
+      </article>
     </div>
-  </section>
 
-  <!-- Notes -->
-  <section class="section">
-    <div class="container fade-up">
-      <div class="panel">
-        <h3 class="panel-title">Notes</h3>
-        <ul class="muted small" style="margin:8px 0 0 18px;">
-          <li>Replace <code>VIDEO_ID_X</code> with your actual YouTube IDs.</li>
-          <li>Replace <code>./assets/flow-architecture.svg</code> with your latest diagram (PNG/SVG).</li>
-          <li>All sections inherit RWD styles; video iframes are responsive with 16:9 aspect ratio.</li>
-        </ul>
-      </div>
+    <!-- Footnote -->
+    <div class="container text-center mt-24 fade-up">
+      <hr class="divider-glass" />
+      <p class="muted xsmall max-600 mt-12">
+        * Generation is performed via third-party open-source 3DGS tools. MemoSpace and MemoLens handle the capture and revisit parts of the workflow.
+      </p>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="muted small">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#" class="link">Privacy</a>
+        <a href="#" class="link">Terms</a>
+        <a href="https://www.instagram.com/memoryferrymen" class="link" target="_blank" rel="noopener noreferrer" aria-label="Follow Memory Ferrymen on Instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Back to Top -->
   <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top">
