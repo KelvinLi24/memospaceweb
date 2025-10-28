@@ -656,3 +656,50 @@ body{
   transform: translate(-50%, -50%) scale(1.08);
 }
 
+/* ================================
+   Ferryman Academy Gradient Button
+   ================================ */
+.btn--gradient {
+  background: linear-gradient(135deg, #3bc8e7 0%, #5df5b5 100%);
+  color: #000;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 4px 16px rgba(59, 200, 231, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.btn--gradient:hover,
+.btn--gradient:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 200, 231, 0.45);
+  opacity: 0.95;
+}
+
+.btn--gradient:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 10px rgba(59, 200, 231, 0.25);
+}
+
+/* ============================
+   Instagram Gradient Button
+   ============================ */
+.btn--instagram {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 40%, #8134af 80%, #515bd4 100%);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 4px 12px rgba(221, 42, 123, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.btn--instagram:hover,
+.btn--instagram:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(221, 42, 123, 0.55);
+  opacity: 0.95;
+}
+
+.btn--instagram:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(221, 42, 123, 0.35);
+}
