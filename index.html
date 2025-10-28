@@ -143,6 +143,23 @@
         </a>
       </div>
     </div>
+    
+    <section id="apps-overview" class="section" style="padding-top: 48px; padding-bottom: 0;"> 
+      <div class="container grid-2 gap-lg stagger" data-stagger>
+        
+        <article class="card fade-up team">
+          <img src="./assets/memospace-logo.svg" alt="MemoSpace Logo" class="avatar" style="width: 80px; height: 80px;"/> 
+          <div class="team-name" data-key="app_memospace_name">MemoSpace</div>
+        </article>
+        
+        <article class="card fade-up team">
+          <img src="./assets/memolens-logo.svg" alt="MemoLens Logo" class="avatar" style="width: 80px; height: 80px;"/> 
+          <div class="team-name" data-key="app_memolens_name">MemoLens</div>
+        </article>
+
+      </div>
+    </section>
+
   </section>
 
   <section class="section" id="teaser-section">
@@ -362,7 +379,7 @@
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v1l-10 6L2 7V6a2 2 0 0 1 2-2Zm18 5.2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.2l10 6Z"/></svg>
           <span data-key="contact_btn_email">Email Us</span>
         </a>
-        <a class="btn btn--primary" href="#" aria-label="Join our Discord" data-key-aria="contact_btn_discord_aria">
+        <a class="btn btn--primary" data-open="qr" aria-label="Join our Discord" data-key-aria="contact_btn_discord_aria">
           <svg width="16" height="16" viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/></svg>
           <span data-key="contact_btn_discord">Join our Discuss Group</span>
         </a>
@@ -384,8 +401,8 @@
       </article>
 
       <article class="card card--hoverrise fade-up">
-        <h4 class="card-title" data-key="faq_q2_q">Can I post to Instagram?</h4>
-        <p class="muted" data-key="faq_q2_a">Yes—export short reels or share web scenes via our app.</p>
+        <h4 class="card-title" data-key="faq_q2_q">How can I extract the highlights of my video and post them on Social Media platforms?</h4>
+        <p class="muted" data-key="faq_q2_a">The videos you shoot with our app will be saved in your photo album, and you can extract your highlights and share them on social media platforms.</p>
       </article>
 
       <article class="card card--hoverrise fade-up">
@@ -432,6 +449,16 @@
     </div>
   </div>
 
+  <div class="modal" id="qrModal" aria-hidden="true" role="dialog" aria-labelledby="qrTitle" aria-modal="true">
+    <div class="modal__backdrop" data-close="qr"></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" type="button" aria-label="Close" data-close="qr" data-key-aria="modal_qr_close_aria">×</button>
+      <div class="modal__body text-center">
+        <h4 id="qrTitle" class="title-lg" style="margin:0 0 12px;" data-key="modal_qr_title">Join Discussion Group</h4>
+        <img src="./assets/qrcode.png" alt="Discussion Group QR Code" class="qr-code-img">
+      </div>
+      </div>
+  </div>
   <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top" data-key-aria="btt_label" data-key-title="btt_label">
     <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">
       <path fill="currentColor" d="M12 5l7 7-1.41 1.41L13 9.83V20h-2V9.83l-4.59 4.58L5 12z"/>

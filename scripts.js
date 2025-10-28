@@ -311,6 +311,36 @@
   })();
 
   // ============================================================
+  // 10.1) QR Code Modal (NEW)
+  // ============================================================
+  (function(){
+    const modal = document.getElementById('qrModal');
+    if(!modal) return;
+
+    const openers = document.querySelectorAll('[data-open="qr"]');
+    const closers = modal.querySelectorAll('[data-close="qr"], .modal__backdrop');
+
+    function openQr(){
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      document.documentElement.style.overflow = 'hidden';
+      const closeBtn = modal.querySelector('.modal__close');
+      closeBtn && closeBtn.focus({ preventScroll: true });
+    }
+
+    function closeQr(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden','true');
+      document.documentElement.style.overflow = '';
+    }
+
+    openers.forEach(btn=> btn.addEventListener('click', (e)=>{ e.preventDefault(); openQr(); }));
+    closers.forEach(btn=> btn.addEventListener('click', closeQr));
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('is-open')) closeQr(); }); // 加上 is-open 判斷
+
+  })();
+
+  // ============================================================
   // 11) YouTube 防護（第一層）— 僅針對 .yt-iframe
   // ============================================================
   // 說明：
@@ -756,6 +786,16 @@
       // Back to Top (index.html)
       "btt_label": { "en": "Back to top", "zh-HK": "回到頂部", "zh-CN": "回到顶部" },
 
+      // === NEW: App Overview Cards ===
+      "app_memospace_name": { "en": "MemoSpace", "zh-HK": "MemoSpace", "zh-CN": "MemoSpace" },
+      // "app_memospace_desc": { "en": "Description...", "zh-HK": "描述...", "zh-CN": "描述..." },
+      "app_memolens_name": { "en": "MemoLens", "zh-HK": "MemoLens", "zh-CN": "MemoLens" },
+      // "app_memolens_desc": { "en": "Description...", "zh-HK": "描述...", "zh-CN": "描述..." },
+
+      // === NEW: QR Modal ===
+      "modal_qr_title": { "en": "Join Discussion Group", "zh-HK": "加入討論群組", "zh-CN": "加入讨论群组" },
+      "modal_qr_close_aria": { "en": "Close QR Code Modal", "zh-HK": "關閉二維碼視窗", "zh-CN": "关闭二维码窗口" },
+
       // Demo Hero (demo.html)
       "demo_hero_title": { "en": "Demo Library", "zh-HK": "範例庫", "zh-CN": "示例库" },
       "demo_hero_subtitle": { "en": "Capture with <strong>MemoLens</strong> → Generate via open-source <strong>3DGS</strong> → Revisit with <strong>MemoSpace</strong>.", "zh-HK": "使用 <strong>MemoLens</strong> 拍攝 → 透過開源 <strong>3DGS</strong> 生成 → 使用 <strong>MemoSpace</strong> 重溫。", "zh-CN": "使用 <strong>MemoLens</strong> 拍摄 → 通过开源 <strong>3DGS</strong> 生成 → 使用 <strong>MemoSpace</strong> 重温。" },
@@ -903,5 +943,6 @@
 
   })();
 
+  
 
 })(); // IIFE END
