@@ -885,3 +885,42 @@ body{
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* =========================================================
+   Custom Glowing Cards (User Request)
+   ========================================================= */
+
+.card--glow-orange,
+.card--glow-dream {
+  /* Add the hoverrise transition */
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card--glow-orange {
+  border: 1px solid rgba(251, 146, 60, 0.4); /* var(--orange) */
+  box-shadow: 0 0 24px rgba(251, 146, 60, 0.2), /* Soft glow */
+              var(--shadow); /* Keep existing base shadow */
+}
+.card--glow-orange:hover {
+  transform: translateY(-4px); /* Add hoverrise */
+  border-color: rgba(251, 146, 60, 0.7);
+  box-shadow: 0 8px 32px rgba(251, 146, 60, 0.35), /* Stronger glow on hover */
+              inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+.card--glow-dream {
+  --glow-dream-1: #8b5cf6; /* Indigo */
+  --glow-dream-2: #38bdf8; /* var(--sky) */
+  
+  border: 1px solid var(--glow-dream-1);
+  background: linear-gradient(135deg, #111114, #101015);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.2), /* Indigo glow */
+              0 0 20px rgba(56, 189, 248, 0.15), /* Sky glow */
+              var(--shadow); /* Keep existing base shadow */
+}
+.card--glow-dream:hover {
+  transform: translateY(-4px); /* Add hoverrise */
+  border-color: var(--glow-dream-2);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3), 
+              0 4px 28px rgba(56, 189, 248, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, .03);
+}
