@@ -620,26 +620,6 @@ body{
   display: block;
 }
 
-/* === Luma Labs Embed sizing (NEW 4:3 Ratio) === */
-.luma-embed {
-  position: relative;
-  width: 100%;
-  /* 4:3 ratio from your provided code (500 / 375 = 1.333) */
-  aspect-ratio: 500 / 375; 
-  border-radius: inherit; /* 繼承卡片的圓角 */
-  overflow: hidden;
-  background: rgba(0,0,0,0.35); /* 保持一致的背景 */
-}
-
-.luma-iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: none;
-}
-
 /* === Lazy YouTube Preview Styles === */
 .yt-lazy {
   position: relative;
@@ -943,4 +923,27 @@ body{
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3), 
               0 4px 28px rgba(56, 189, 248, 0.25),
               inset 0 1px 0 rgba(255, 255, 255, .03);
+}
+
+/* =========================================================
+   [NEW] Generic Responsive Embed (for Luma, etc.)
+   (Copies .yt-embed styles but uses different class)
+   ========================================================= */
+
+.responsive-embed-16x9 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: inherit; /* 繼承卡片的圓角 */
+  overflow: hidden;
+  background: #0a0a0d; /* 載入時的深色背景 */
+}
+
+.responsive-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0; /* 確保無邊框 */
 }
