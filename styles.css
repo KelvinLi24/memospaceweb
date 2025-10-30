@@ -620,6 +620,26 @@ body{
   display: block;
 }
 
+/* === Luma Labs Embed sizing (NEW 4:3 Ratio) === */
+.luma-embed {
+  position: relative;
+  width: 100%;
+  /* 4:3 ratio from your provided code (500 / 375 = 1.333) */
+  aspect-ratio: 500 / 375; 
+  border-radius: inherit; /* 繼承卡片的圓角 */
+  overflow: hidden;
+  background: rgba(0,0,0,0.35); /* 保持一致的背景 */
+}
+
+.luma-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+}
+
 /* === Lazy YouTube Preview Styles === */
 .yt-lazy {
   position: relative;
