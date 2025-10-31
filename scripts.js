@@ -771,7 +771,7 @@
       "faq_q3_q": { "en": "Is my data safe?", "zh-HK": "我的資料安全嗎？", "zh-CN": "我的数据安全吗？" },
       "faq_q3_a": { "en": "We do not collect any data from your device. All data will only save in your local device.", "zh-HK": "我們不會從您的裝置收集任何資料。所有資料只會儲存在您的本機裝置中。", "zh-CN": "我们不会从您的设备收集任何数据。所有数据只会保存在您的本地设备中。" },
       "faq_q4_q": { "en": "When can I try it?", "zh-HK": "我什麼時候可以試用？", "zh-CN": "我什么时候可以试用？" },
-      "faq_q4_a": { "en": "Public beta is coming soon. Stay tuned on our latest news.", "zh-HK": "公開測試即將推出。請持續關注我們的最新消息。", "zh-CN": "公开测试即将推出。请持续关注我们的最新消息。" },
+      "faq_q4_a": { "en": "Both MemoSpace and MemoLens are now available on appstore.", "zh-HK": "MemoSpace和MemoLens都已經在AppStore上架了。", "zh-CN": "MemoSpace和MemoLens都已经在AppStore上架了。" },
 
       // Footer (index.html)
       "footer_copy": { "en": "© 2025 Memory Ferrymen. All rights reserved.", "zh-HK": "© 2025 Memory Ferrymen. 版權所有。", "zh-CN": "© 2025 Memory Ferrymen. 版权所有。" },
