@@ -660,6 +660,7 @@
       "og_desc_demo": { "en": "Watch MemoSpace demos: capture with MemoLens...", "zh-HK": "觀看 MemoSpace 範例：使用 MemoLens 拍攝...", "zh-CN": "观看 MemoSpace 示例：使用 MemoLens 拍摄..." },
       
       // 導覽列 (共用)
+      "nav_achievements": { "en": "Achievements", "zh-HK": "Achievements", "zh-CN": "Achievements" },
       "nav_features": { "en": "Features", "zh-HK": "功能特色", "zh-CN": "功能特色" },
       "nav_how": { "en": "How it works", "zh-HK": "運作方式", "zh-CN": "运作方式" },
       "nav_story": { "en": "Story", "zh-HK": "我們的故事", "zh-CN": "我们的故事" },
@@ -673,6 +674,7 @@
       "mobile_lang_select": { "en": "Select Language", "zh-HK": "選擇語言", "zh-CN": "选择语言" },
 
       // 導覽列 (Mobile, data-key 相同)
+      "nav_achievements_m": { "en": "Achievements", "zh-HK": "Achievements", "zh-CN": "Achievements" },
       "nav_features_m": { "en": "Features", "zh-HK": "功能特色", "zh-CN": "功能特色" },
       "nav_how_m": { "en": "How it works", "zh-HK": "運作方式", "zh-CN": "运作方式" },
       "nav_story_m": { "en": "Story", "zh-HK": "我們的故事", "zh-CN": "我们的故事" },
@@ -703,6 +705,27 @@
       "hero_badge_visionpro": { "en": "Vision Pro", "zh-HK": "Vision Pro", "zh-CN": "Vision Pro" },
       "hero_cta_ig": { "en": "Follow on Instagram", "zh-HK": "在 Instagram 上追蹤", "zh-CN": "在 Instagram 上关注" },
       "hero_cta_ig_aria": { "en": "Follow on Instagram", "zh-HK": "在 Instagram 上追蹤", "zh-CN": "在 Instagram 上关注" },
+
+      // Achievements (index.html)
+      "achievements_label": { "en": "Recognition", "zh-HK": "Recognition", "zh-CN": "Recognition" },
+      "achievements_title": { "en": "Achievements", "zh-HK": "Achievements", "zh-CN": "Achievements" },
+      "achievements_intro": { "en": "Recognition for MemoSpace at the China Collegiate Computing Contest – Mobile Application Innovation Contest 2025.", "zh-HK": "Recognition for MemoSpace at the China Collegiate Computing Contest – Mobile Application Innovation Contest 2025.", "zh-CN": "Recognition for MemoSpace at the China Collegiate Computing Contest – Mobile Application Innovation Contest 2025." },
+      "achievements_feature_badge": { "en": "Achievement", "zh-HK": "Achievement", "zh-CN": "Achievement" },
+      "achievements_feature_title": { "en": "China Collegiate Computing Contest", "zh-HK": "China Collegiate Computing Contest", "zh-CN": "China Collegiate Computing Contest" },
+      "achievements_feature_subtitle": { "en": "Mobile Application Innovation Contest 2025", "zh-HK": "Mobile Application Innovation Contest 2025", "zh-CN": "Mobile Application Innovation Contest 2025" },
+      "achievements_feature_award_1": { "en": "Champion (Hong Kong Regional Final), Jul 2025", "zh-HK": "Champion (Hong Kong Regional Final), Jul 2025", "zh-CN": "Champion (Hong Kong Regional Final), Jul 2025" },
+      "achievements_feature_award_2": { "en": "Second Prize (National Final), Nov 2025", "zh-HK": "Second Prize (National Final), Nov 2025", "zh-CN": "Second Prize (National Final), Nov 2025" },
+      "achievements_feature_issuer": { "en": "Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club / Computer Education Research Association of Chinese Universities", "zh-HK": "Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club / Computer Education Research Association of Chinese Universities", "zh-CN": "Issued by: The Hong Kong Polytechnic University Department of Computing (PolyU COMP) &amp; iOS Club / Computer Education Research Association of Chinese Universities" },
+      "achievements_news_heading": { "en": "Official News Coverage", "zh-HK": "Official News Coverage", "zh-CN": "Official News Coverage" },
+      "achievements_news_source": { "en": "PolyU Department of Computing", "zh-HK": "PolyU Department of Computing", "zh-CN": "PolyU Department of Computing" },
+      "achievements_news_1_source": { "en": "Source: PolyU Department of Computing", "zh-HK": "Source: PolyU Department of Computing", "zh-CN": "Source: PolyU Department of Computing" },
+      "achievements_news_1_date": { "en": "Date: 10 Jul 2025", "zh-HK": "Date: 10 Jul 2025", "zh-CN": "Date: 10 Jul 2025" },
+      "achievements_news_1_title": { "en": "COMP Co-hosts Mobile App Innovation Contest (MAIC) 2025 – Hong Kong Regional Final, Showcasing Next-Generation IT Talent", "zh-HK": "COMP Co-hosts Mobile App Innovation Contest (MAIC) 2025 – Hong Kong Regional Final, Showcasing Next-Generation IT Talent", "zh-CN": "COMP Co-hosts Mobile App Innovation Contest (MAIC) 2025 – Hong Kong Regional Final, Showcasing Next-Generation IT Talent" },
+      "achievements_news_2_source": { "en": "Source: PolyU Department of Computing", "zh-HK": "Source: PolyU Department of Computing", "zh-CN": "Source: PolyU Department of Computing" },
+      "achievements_news_2_date": { "en": "Date: 30 Nov 2025", "zh-HK": "Date: 30 Nov 2025", "zh-CN": "Date: 30 Nov 2025" },
+      "achievements_news_2_title": { "en": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"", "zh-HK": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"", "zh-CN": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"" },
+      "achievements_news_cta": { "en": "Read Official News →", "zh-HK": "Read Official News →", "zh-CN": "Read Official News →" },
+      "achievements_certificate_label": { "en": "Competition Certificate", "zh-HK": "Competition Certificate", "zh-CN": "Competition Certificate" },
 
       // Teaser (index.html)
       "teaser_title": { "en": "MemoSpace Concept Video", "zh-HK": "MemoSpace 概念影片", "zh-CN": "MemoSpace 概念视频" },
