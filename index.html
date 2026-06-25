@@ -197,12 +197,21 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="achievement-news-card__media">
+            <div class="achievement-news-card__media achievement-media-frame">
+              <button
+                type="button"
+                class="achievement-image-trigger"
+                data-full-src="./assets/maic-hong-kong-regional-final-2025.jpg"
+                data-full-alt="Participants, awardees, and judges at the MAIC 2025 Hong Kong Regional Final"
+                aria-label="Open enlarged image"
+              >
               <img
                 src="./assets/maic-hong-kong-regional-final-2025.jpg"
                 alt="Participants, awardees, and judges at the MAIC 2025 Hong Kong Regional Final"
                 loading="lazy"
+                class="achievement-media-frame__image"
               />
+              </button>
             </div>
 
             <div class="achievement-news-card__body">
@@ -224,12 +233,21 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="achievement-news-card__media">
+            <div class="achievement-news-card__media achievement-media-frame">
+              <button
+                type="button"
+                class="achievement-image-trigger"
+                data-full-src="./assets/maic-national-finals-memospace-2025.jpg"
+                data-full-alt="MemoSpace team members holding their MAIC 2025 National Finals certificates and awards"
+                aria-label="Open enlarged image"
+              >
               <img
                 src="./assets/maic-national-finals-memospace-2025.jpg"
                 alt="MemoSpace team members holding their MAIC 2025 National Finals certificates and awards"
                 loading="lazy"
+                class="achievement-media-frame__image"
               />
+              </button>
             </div>
 
             <div class="achievement-news-card__body">
@@ -249,18 +267,19 @@
     <div class="container mt-16 fade-up">
       <div class="achievement-certificate">
         <p class="achievement-certificate__label" data-key="achievements_certificate_label">Competition Certificate</p>
-        <a
-          href="./assets/cert.png"
-          class="achievement-certificate__link"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          class="achievement-image-trigger achievement-certificate__trigger"
+          data-full-src="./assets/cert.png"
+          data-full-alt="Certificate for the China Collegiate Computing Contest Mobile Application Innovation Contest 2025"
+          aria-label="Open enlarged image"
         >
           <img
             src="./assets/cert.png"
             alt="Certificate for the China Collegiate Computing Contest Mobile Application Innovation Contest 2025"
-            class="achievement-certificate__image"
+            class="achievement-media-frame__image achievement-certificate__image"
           />
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -542,7 +561,11 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="muted small" data-key="footer_copy">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="footer__copyright muted small" data-key="footer_copy">© 2025 Memory Ferrymen. All rights reserved.</div>
+      <div class="footer__partner-logos" aria-label="PolyU partner logos">
+        <img src="./assets/polyu_white_logo.png" alt="The Hong Kong Polytechnic University" />
+        <img src="./assets/polyu_comp_white_logo.png" alt="Department of Computing, The Hong Kong Polytechnic University" />
+      </div>
       <div class="footer-links">
         <a
           href="https://www.instagram.com/ferryman.academy/"
@@ -578,9 +601,18 @@
       <button class="modal__close" type="button" aria-label="Close" data-close="qr" data-key-aria="modal_qr_close_aria">×</button>
       <div class="modal__body text-center">
         <h4 id="qrTitle" class="title-lg" style="margin:0 0 12px;" data-key="modal_qr_title">Join Discussion Group</h4>
-        <img src="./assets/qrcode.jpg" alt="Discussion Group QR Code" class="qr-code-img">
+        <div class="join-discussion-group__image-placeholder" aria-label="Not Available" data-key="join_discussion_not_available">Not Available</div>
       </div>
       </div>
+  </div>
+  <div class="modal achievement-lightbox" id="achievementLightbox" aria-hidden="true" role="dialog" aria-label="Enlarged image" aria-modal="true">
+    <div class="modal__backdrop" data-close="achievement-lightbox"></div>
+    <div class="achievement-lightbox__dialog" role="document">
+      <button class="modal__close" type="button" aria-label="Close enlarged image" data-close="achievement-lightbox">×</button>
+      <div class="achievement-lightbox__body">
+        <img id="achievementLightboxImage" alt="" />
+      </div>
+    </div>
   </div>
   <button id="backToTop" class="backtotop" aria-label="Back to top" title="Back to top" data-key-aria="btt_label" data-key-title="btt_label">
     <svg width="18" height="18" viewBox="0 0 24 24" class="icon" aria-hidden="true">

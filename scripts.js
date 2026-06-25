@@ -341,6 +341,59 @@
   })();
 
   // ============================================================
+  // 10.2) Achievement image lightbox
+  // ============================================================
+  (function(){
+    const modal = document.getElementById('achievementLightbox');
+    const image = document.getElementById('achievementLightboxImage');
+    if(!modal || !image) return;
+
+    const triggers = document.querySelectorAll('.achievement-image-trigger[data-full-src]');
+    let lastTrigger = null;
+
+    function openLightbox(trigger){
+      lastTrigger = trigger;
+      image.src = trigger.dataset.fullSrc;
+      image.alt = trigger.dataset.fullAlt || trigger.querySelector('img')?.alt || 'Enlarged image';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      document.documentElement.style.overflow = 'hidden';
+      modal.querySelector('.modal__close')?.focus({ preventScroll: true });
+    }
+
+    function closeLightbox(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden','true');
+      document.documentElement.style.overflow = '';
+      image.src = '';
+      if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+    }
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(trigger);
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(trigger);
+        }
+      });
+    });
+
+    modal.querySelectorAll('[data-close="achievement-lightbox"], .modal__backdrop').forEach(el => {
+      el.addEventListener('click', closeLightbox);
+    });
+
+    image.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+
+  // ============================================================
   // 11) YouTube 防護（第一層）— 僅針對 .yt-iframe
   // ============================================================
   // 說明：
@@ -726,6 +779,7 @@
       "achievements_news_2_title": { "en": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"", "zh-HK": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"", "zh-CN": "COMP Year 4 Students Win Second Prize at MAIC 2025 National Finals with Innovative Digital Memory Platform \"MemoSpace\"" },
       "achievements_news_cta": { "en": "Read Official News →", "zh-HK": "Read Official News →", "zh-CN": "Read Official News →" },
       "achievements_certificate_label": { "en": "Competition Certificate", "zh-HK": "Competition Certificate", "zh-CN": "Competition Certificate" },
+      "join_discussion_not_available": { "en": "Not Available", "zh-HK": "Not Available", "zh-CN": "Not Available" },
 
       // Teaser (index.html)
       "teaser_title": { "en": "MemoSpace Concept Video", "zh-HK": "MemoSpace 概念影片", "zh-CN": "MemoSpace 概念视频" },
